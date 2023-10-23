@@ -10,7 +10,7 @@ args = parser.parse_args()
 
 res = requests.get(args.url)
 if args.I:
-    for k in res.headers.keys():
+    for k in res.headers:
         print(f"{k} = {res.headers[k]}")
     exit()
 

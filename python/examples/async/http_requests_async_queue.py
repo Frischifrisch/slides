@@ -15,9 +15,10 @@ async def fetch(session, urls, results):
 async def main(parallel, urls):
     results = {}
     async with aiohttp.ClientSession() as session:
-        tasks = []
-        for _ in range(parallel):
-            tasks.append(asyncio.create_task(fetch(session, urls, results)))
+        tasks = [
+            asyncio.create_task(fetch(session, urls, results))
+            for _ in range(parallel)
+        ]
         await asyncio.gather(*tasks)
     return results
 
@@ -31,7 +32,7 @@ def setup():
     with open(filename) as fh:
         urls = list(map(lambda url: url.rstrip('\n'), fh.readlines()))
     if len(urls) > limit:
-        urls = urls[0:limit]
+        urls = urls[:limit]
     # use asyncio.Queue instead
 
     results = asyncio.run(main(parallel, urls))

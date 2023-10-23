@@ -11,9 +11,7 @@ def simple_app(environ, start_response):
 
     start_response(status, headers)
 
-    ret = ["{}: {}\n".format(key, value)
-           for key, value in environ.iteritems()]
-    return ret
+    return [f"{key}: {value}\n" for key, value in environ.iteritems()]
 
 httpd = make_server('', 8000, simple_app)
 print("Serving on port 8000...")

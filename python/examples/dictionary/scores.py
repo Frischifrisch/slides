@@ -5,7 +5,7 @@ scores = {
     "Hellena" : 90,
 }
 
-for name in scores.keys():
+for name in scores:
     print(f"{name:8} {scores[name]}")
 
 print('')

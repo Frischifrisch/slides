@@ -10,10 +10,8 @@ with open(filename, 'r') as fh:
     for line in fh:
         print(line, end=" ")
 
-        match = re.search(r'REGEX1', line)
-        if match:
+        if match := re.search(r'REGEX1', line):
             print("   Matching 1", match.group(0))
 
-        match = re.search(r'REGEX2', line)
-        if match:
+        if match := re.search(r'REGEX2', line):
             print("   Matching 2", match.group(0))

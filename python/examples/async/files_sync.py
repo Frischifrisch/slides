@@ -5,10 +5,7 @@ import os
 def save_file(filename, size):
     with open(filename, 'w') as f:
         for _ in range(size):
-            data = ''
-            for _ in range(1000):
-                data += 'xxxxxxxxxxx'
-
+            data = ''.join('xxxxxxxxxxx' for _ in range(1000))
             f.write(data)
 
 def main():

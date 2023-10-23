@@ -19,7 +19,7 @@ def receive():
     while True:
         msg = consumer.receive()
         try:
-            logger.info("Received: {}: {}".format(msg.data(), msg.message_id()))
+            logger.info(f"Received: {msg.data()}: {msg.message_id()}")
             consumer.acknowledge(msg)
         except Exception as err:
             logger.error(f"Exception {err}")

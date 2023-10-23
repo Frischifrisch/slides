@@ -3,16 +3,18 @@ import inspect
 class Base():
     def __init__(self, *args, **kwargs):
         if self.__class__.__name__ == 'Base':
-            raise Exception('You are required to subclass the {} class'
-                .format('Base'))
+            raise Exception('You are required to subclass the Base class')
 
-        methods = set([ x[0] for x in
-            inspect.getmembers(self.__class__, predicate=inspect.ismethod)])
-        required = set(['foo', 'bar'])
+        methods = {
+            x[0]
+            for x in inspect.getmembers(self.__class__, predicate=inspect.ismethod)
+        }
+        required = {'foo', 'bar'}
         if not required.issubset( methods ):
             missing = required - methods
-            raise Exception("Requried method '{}' is not implemented in '{}'"
-                .format(', '.join(missing), self.__class__.__name__))
+            raise Exception(
+                f"Requried method '{', '.join(missing)}' is not implemented in '{self.__class__.__name__}'"
+            )
 
 
 class Real(Base):

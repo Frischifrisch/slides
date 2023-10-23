@@ -28,5 +28,5 @@ for i in range(0, len(dna)-2, 3):
     count[aa] += 1
 
 for aa in sorted(count.keys()):
-    print("{}  {}".format(aa, count[aa]))
+    print(f"{aa}  {count[aa]}")
 

@@ -4,7 +4,7 @@ port = 8000
 
 class Echo(protocol.Protocol):
     def dataReceived(self, data):
-        print("Received: {}".format(data))
+        print(f"Received: {data}")
         self.transport.write(data)
 
 class EchoFactory(protocol.Factory):

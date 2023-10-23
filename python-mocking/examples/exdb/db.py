@@ -17,10 +17,7 @@ class DB():
         c = self.conn.cursor()
         c.execute('SELECT ballance FROM account WHERE name=?', (name,))
         current = c.fetchone()
-        if current == None:
-            return current
-        else:
-            return current[0]
+        return current if current is None else current[0]
 
     def insert(self, name, amount):
         c = self.conn.cursor()

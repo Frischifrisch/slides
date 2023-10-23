@@ -4,8 +4,7 @@ def fib(n):
     if n == 2:
         return [1, 1]
     fibs = [1, 1]
-    for _ in range(2, n):
-        fibs.append(fibs[-1] + fibs[-2])
+    fibs.extend(fibs[-1] + fibs[-2] for _ in range(2, n))
     return fibs
 
 print(fib(1))  # [1]

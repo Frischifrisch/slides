@@ -3,4 +3,4 @@ while True:
    if len(id_str) == 9:
        break
 
-print("Your ID is " + id_str)
+print(f"Your ID is {id_str}")

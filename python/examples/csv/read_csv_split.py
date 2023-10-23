@@ -1,7 +1,7 @@
 import sys, csv
 
 if len(sys.argv) != 2:
-    sys.stderr.write("Usage: {} FILENAME\n".format(sys.argv[0]))
+    sys.stderr.write(f"Usage: {sys.argv[0]} FILENAME\n")
     exit()
 
 filename = sys.argv[1]
@@ -13,4 +13,4 @@ with open(filename) as fh:
         #print(row)
         count += int(row[2])
 
-print("Total: {}".format(count))
+print(f"Total: {count}")

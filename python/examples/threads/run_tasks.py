@@ -6,7 +6,7 @@ def source():
     return range(1, 10)
 
 def do_work(item):
-    print("Working on item " + str(item) + "\n", end="")
+    print(f"Working on item {str(item)}" + "\n", end="")
 # print("Working on item ", str(item))
 # would show the output intermingled as the separate items of the print statement
 # (even the trailing newline) might be printed only after context switch
@@ -19,7 +19,7 @@ def worker():
         q.task_done()
 
 def main():
-    for i in range(num_worker_threads):
+    for _ in range(num_worker_threads):
         t = Thread(target=worker)
         t.daemon = True
         t.start()

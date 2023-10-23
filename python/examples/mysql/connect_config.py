@@ -8,7 +8,7 @@ def read_config(section = 'development'):
     cp = configparser.ConfigParser()
     cp.read(config_file)
     if not cp.has_section(section):
-        raise Exception("No configuration found for '{}'".format(section))
+        raise Exception(f"No configuration found for '{section}'")
 
     return cp[section]
 

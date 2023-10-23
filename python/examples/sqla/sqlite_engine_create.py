@@ -5,7 +5,7 @@ dbname = 'test.db'
 if os.path.exists(dbname):
     os.unlink(dbname)
 
-engine = create_engine('sqlite:///' + dbname)  # Engine
+engine = create_engine(f'sqlite:///{dbname}')
 
 engine.execute('''
     CREATE TABLE person (

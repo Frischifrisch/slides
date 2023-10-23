@@ -7,9 +7,7 @@ def get_urls(content):
     urls = []
     root = ET.fromstring(content)
     for child in root:
-        for ch in child:
-            if ch.tag.endswith('loc'):
-                urls.append(ch.text)
+        urls.extend(ch.text for ch in child if ch.tag.endswith('loc'))
     #print(len(urls)) # 2653
     MAX = 20
     if len(urls) > MAX:
@@ -37,7 +35,7 @@ def main():
         print(soup.title.string)
         titles.append(soup.title.string)
     end = time.time()
-    print("Elapsed time: {} for {} pages.".format(end-start, len(urls)))
+    print(f"Elapsed time: {end - start} for {len(urls)} pages.")
     print(titles)
 
 

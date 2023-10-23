@@ -1,9 +1,9 @@
 def test_one():
-    assert True
+    pass
 
 def test_two():
-    assert True
+    pass
 
 def test_three():
-    assert True
+    pass
 

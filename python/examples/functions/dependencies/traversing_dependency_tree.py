@@ -2,15 +2,15 @@ import sys
 import os
 
 if len(sys.argv) < 2:
-   exit("Usage: {} NAME".format(sys.argv[0]))
+   exit(f"Usage: {sys.argv[0]} NAME")
 
 start = sys.argv[1]
 
 def get_dependencies(name):
-   print("Processing {}".format(name))
+   print(f"Processing {name}")
 
    deps = set(name)
-   filename = name + ".txt"
+   filename = f"{name}.txt"
    if not os.path.exists(filename):
        return deps
 

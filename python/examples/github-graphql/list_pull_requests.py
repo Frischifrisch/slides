@@ -5,12 +5,7 @@ from gql.transport.aiohttp import AIOHTTPTransport
 import datetime
 import sys
 
-if len(sys.argv) == 2:
-    output_file = sys.argv[1]
-else:
-    output_file = None
-
-
+output_file = sys.argv[1] if len(sys.argv) == 2 else None
 token = os.environ.get('MY_GITHUB_TOKEN')
 headers = {
     'Authorization': f'Bearer {token}',

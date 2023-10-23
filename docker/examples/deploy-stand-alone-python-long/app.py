@@ -7,8 +7,7 @@ version = 1
 app = Flask(__name__)
 
 filename = 'counter.txt'
-dirname = os.environ.get('COUNTER_DIR')
-if dirname:
+if dirname := os.environ.get('COUNTER_DIR'):
     filename = os.path.join(dirname, filename)
 
 @app.route("/", methods=['GET'])

@@ -37,6 +37,6 @@ if __name__ == '__main__':
     dbname = 'imdb.db'
     if os.path.exists(dbname):
         os.unlink(dbname)
-    engine = create_engine('sqlite:///' + dbname)
+    engine = create_engine(f'sqlite:///{dbname}')
     Base.metadata.create_all(engine)
 

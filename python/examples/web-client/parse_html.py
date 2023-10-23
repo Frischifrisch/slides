@@ -35,8 +35,6 @@ if tfa is not None:
     #print(tfa)
     paras = tfa[0].select("p")
     if paras is not None:
-        #print(paras)
-        links = paras[0].find_all("a", limit=1)
-        if links:
+        if links := paras[0].find_all("a", limit=1):
             print(links[0].text)
             print(links[0].attrs.get('href'))

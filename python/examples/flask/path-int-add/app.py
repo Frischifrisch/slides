@@ -9,10 +9,7 @@ def main():
 def calc(op, a, b):
     if op == 'add':
         return str(a+b)
-    if op == 'mul':
-        return str(a*b)
-
-    return 'Invalid operator'
+    return str(a*b) if op == 'mul' else 'Invalid operator'
 
 @app.route('/sum/<path:values>')
 def sum_route(values):

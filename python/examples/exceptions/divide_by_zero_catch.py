@@ -1,7 +1,7 @@
 import sys
 
 def div(a, b):
-    print("dividing {} by {} is {}".format(a, b, a/b))
+    print(f"dividing {a} by {b} is {a / b}")
 
 total = 100
 values = [2, 5, 0, 4]

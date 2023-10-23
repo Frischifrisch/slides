@@ -28,10 +28,8 @@ queue = [
   'http://docs.python.org/3/howto/ipaddress.html',
 ]
 
-max_parallel = 3
 current_parallel = 0
-if len(sys.argv) == 2:
-  max_parallel = int(sys.argv[1])
+max_parallel = int(sys.argv[1]) if len(sys.argv) == 2 else 3
 
 def printPage(result):
   print("page size: ", len(result))
@@ -56,7 +54,7 @@ def stop(result):
 
 def process_queue():
   global current_parallel, max_parallel,queue
-  print("process_queue cs: {} max: {}".format(current_parallel, max_parallel))
+  print(f"process_queue cs: {current_parallel} max: {max_parallel}")
   while True:
     if current_parallel >= max_parallel:
       print("No empty slot")
@@ -66,8 +64,8 @@ def process_queue():
       if current_parallel == 0:
         reactor.stop()
       return
-    url = queue[0] + '?' + str(time.time())
-    queue[0:1] = []
+    url = f'{queue[0]}?{str(time.time())}'
+    queue[:1] = []
     current_parallel += 1
     d = getPage(url)
     d.addCallbacks(printPage, printError)

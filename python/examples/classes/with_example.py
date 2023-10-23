@@ -10,7 +10,7 @@ class WithClass:
         print('exiting the system')
 
     def __str__(self):
-        return 'WithObject:'+self.name
+        return f'WithObject:{self.name}'
 
 x = WithClass()
 with x as y:

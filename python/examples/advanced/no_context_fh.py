@@ -2,19 +2,16 @@ import sys
 import re
 
 def do_something(filename):
-    fh = open(filename)
+    with open(filename) as fh:
+        while True:
+            line = fh.readline()
+            if line is None:
+                break
+            line = line.rstrip("\n")
 
-    while True:
-        line = fh.readline()
-        if line is None:
-            break
-        line = line.rstrip("\n")
-
-        if re.search(r'\A\s*\Z', line):
-            return
-        print(line)
-
-    fh.close()
+            if re.search(r'\A\s*\Z', line):
+                return
+            print(line)
 
 def main():
     if len(sys.argv) != 2:

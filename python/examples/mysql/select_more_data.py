@@ -12,11 +12,11 @@ def main():
     cursor.execute("SELECT * FROM person")
 
     while True:
-        row = cursor.fetchone()
-        if not row:
-            break
-        print(row)
+        if row := cursor.fetchone():
+            print(row)
 
+        else:
+            break
     cursor.close()
     conn.close()
 

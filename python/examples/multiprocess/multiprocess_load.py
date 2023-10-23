@@ -21,9 +21,9 @@ def main():
     size = int(sys.argv[1])
     with multiprocessing.Pool(size) as pool:
         results = pool.map(calc, [size] *  size)
-        print("Results: {}".format(results))
+        print(f"Results: {results}")
         totals = map(lambda r: r['total'], results)
-        print("Total: {}".format(sum(totals)))
+        print(f"Total: {sum(totals)}")
     end = time.time()
     print(end - start)
 

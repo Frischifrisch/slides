@@ -2,10 +2,7 @@ from series import integers
 
 def mysum(nums):
     print(nums)
-    total = 0
-    for n in nums:
-        total += n
-    return total
+    return sum(nums)
 
 n3 = integers(3)
 n7 = integers(7)

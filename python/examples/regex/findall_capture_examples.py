@@ -3,8 +3,7 @@ import re
 line = 'There is a phone number 83795 in this row and another 42 number'
 print(line)
 
-search = re.search(r'(\d)(\d)', line)
-if search:
+if search := re.search(r'(\d)(\d)', line):
   print(search.group(1))   # 8
   print(search.group(2))   # 3
 

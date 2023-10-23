@@ -4,7 +4,6 @@ Documentation of the module
 
 def some_funcion():
     "Documentation of the function"
-    pass
 
 text = """first row
 second row

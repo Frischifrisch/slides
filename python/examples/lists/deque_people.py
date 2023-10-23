@@ -17,7 +17,7 @@ while True:
 
     if inp == 'n':
         if len(queue) > 0:
-            print("next is {}".format(queue.popleft()))
+            print(f"next is {queue.popleft()}")
         else:
             print("the queue is empty")
         continue

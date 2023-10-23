@@ -4,5 +4,5 @@ x = defaultdict(list)
 x["b"].append("vv")
 print(x)
 print('---')
-for z in x.keys():
+for z in x:
     print(z)

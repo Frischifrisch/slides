@@ -28,8 +28,8 @@ db.DB = MockDB
 def test_app(tmpdir):
     app = Bank()
     app.setup()
-    assert app.status('foo') == None
-    assert app.status('bar') == None
+    assert app.status('foo') is None
+    assert app.status('bar') is None
 
     app.deposit('foo', 100)
     assert app.status('foo') == 100

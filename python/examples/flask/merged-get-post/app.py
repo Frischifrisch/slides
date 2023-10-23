@@ -7,14 +7,13 @@ def index():
 
 @app.route("/calc", methods=['GET', 'POST'] )
 def calc():
-    if request.method == 'POST':
-        a = request.form.get('a', '0')
-        b = request.form.get('b', '0')
-        return str(float(a) + float(b))
-    else:
+    if request.method != 'POST':
         return '''<form method="POST" action="/calc">
             <input name="a">
             <input name="b">
             <input type="submit" value="Compute">
             </form>'''
+    a = request.form.get('a', '0')
+    b = request.form.get('b', '0')
+    return str(float(a) + float(b))
 

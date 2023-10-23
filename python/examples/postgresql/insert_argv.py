@@ -2,7 +2,7 @@ import psycopg2
 import sys
 
 if len(sys.argv) != 3:
-    exit("Usage: {} ID NAME".format(sys.argv[0]))
+    exit(f"Usage: {sys.argv[0]} ID NAME")
 
 uid, name = sys.argv[1:]
 

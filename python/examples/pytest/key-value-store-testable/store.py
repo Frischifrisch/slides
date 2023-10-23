@@ -26,8 +26,7 @@ def _read_data():
 
 def _get_filename():
     path = os.environ.get('STORE_DIR', os.path.dirname(os.path.abspath(__file__)))
-    filename = os.path.join(path, 'store.json')
-    return filename
+    return os.path.join(path, 'store.json')
 
 
 if __name__ == '__main__':

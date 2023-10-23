@@ -5,8 +5,7 @@ app = Flask(__name__)
 def get_counter_file():
     data_dir = os.path.dirname(os.path.abspath(__file__))
     data_dir = os.environ.get('COUNTER_DATA_DIR', data_dir)
-    counter_file = os.path.join(data_dir, 'counter.txt')
-    return counter_file
+    return os.path.join(data_dir, 'counter.txt')
 
 @app.route("/")
 def main():

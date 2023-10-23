@@ -3,12 +3,10 @@ import numpy as np
 import datetime
 import sys
 
-filename = 'raw_data.xlsx'
-if len(sys.argv) == 2:
-    filename = sys.argv[1]
+filename = sys.argv[1] if len(sys.argv) == 2 else 'raw_data.xlsx'
 
 def calculate_averages(row):
-    v1 = row.iloc[0:3].mean()
+    v1 = row.iloc[:3].mean()
     v2 = row.iloc[3:6].mean()
     return np.log2(v1/v2)
 

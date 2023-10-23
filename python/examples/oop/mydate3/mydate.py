@@ -8,7 +8,7 @@ class Date:
         Date.total += 1
 
     def __str__(self):
-        return 'Date({}, {}, {})'.format(self.year, self.month, self.day)
+        return f'Date({self.year}, {self.month}, {self.day})'
 
     def set_date(self, y, m, d):
         self.year = y
@@ -16,6 +16,6 @@ class Date:
         self.day = d
 
     @classmethod
-    def get_total(class_object):
-        print(class_object)
-        return class_object.total
+    def get_total(cls):
+        print(cls)
+        return cls.total

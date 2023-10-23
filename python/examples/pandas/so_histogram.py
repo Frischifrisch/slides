@@ -2,10 +2,7 @@ import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 
-filename = "survey_results_public.csv"
-if len(sys.argv) == 2:
-    filename = sys.argv[1]
-
+filename = sys.argv[1] if len(sys.argv) == 2 else "survey_results_public.csv"
 df = pd.read_csv(filename)
 
 country_count = df['Country'].value_counts()

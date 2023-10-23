@@ -1,5 +1,5 @@
-english = set(['door', 'car', 'lunar', 'era'])
-spanish = set(['era', 'lunar', 'hola'])
+english = {'door', 'car', 'lunar', 'era'}
+spanish = {'era', 'lunar', 'hola'}
 
 print(spanish.difference(english))
 print(english.difference(spanish))

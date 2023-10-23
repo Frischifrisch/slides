@@ -3,12 +3,7 @@ def get_sequences(dna):
     sequences.sort(key=len, reverse=True)
     print(sequences)
 
-    new_seq = []
-    for w in sequences:
-       if len(w) > 0:
-          new_seq.append(w)
-
-    return new_seq
+    return [w for w in sequences if len(w) > 0]
 
 
 if __name__ == '__main__':

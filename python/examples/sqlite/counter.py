@@ -20,9 +20,7 @@ def list_counters(crs):
 def get_counter(crs, name):
     crs.execute("SELECT count FROM counters WHERE name = ?", (name,))
     line = crs.fetchone()
-    if line is None:
-        return None
-    return line[0]
+    return None if line is None else line[0]
 
 
 def increase_counter(conn, crs, name):

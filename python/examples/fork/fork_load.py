@@ -3,9 +3,9 @@ import random
 import sys
 
 if len(sys.argv) != 2:
-    exit("Usage: {} N".format(sys.argv[0]))
+    exit(f"Usage: {sys.argv[0]} N")
 n = int(sys.argv[1])
-for p in range(0, n):
+for _ in range(0, n):
     pid = os.fork()
     if not pid:
         print('In Child')
@@ -18,7 +18,7 @@ for p in range(0, n):
         exit(3)
     print('In Parent of', pid)
 
-for p in range(0, n):
+for _ in range(0, n):
     r = os.wait()
     print(r)
 

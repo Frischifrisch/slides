@@ -15,7 +15,7 @@ def main():
         if name in phonebook:
             print(phonebook[name])
         else:
-            print("{} is not in the phonebook".format(name))
+            print(f"{name} is not in the phonebook")
         return
 
     if len(sys.argv) == 3:
@@ -28,7 +28,7 @@ def main():
         return
 
     print("Invalid number of parameters")
-    print("Usage: {} username [phone]".format(sys.argv[0]))
+    print(f"Usage: {sys.argv[0]} username [phone]")
 
 if __name__ == '__main__':
     main()

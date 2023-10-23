@@ -7,16 +7,16 @@ def first(count):
     sleep = random.randint(1,10)/2
     if count == 10:
         sleep = 10
-    print("Start First {} (sleeping for {}s)".format(count, sleep))
+    print(f"Start First {count} (sleeping for {sleep}s)")
     time.sleep(sleep)
-    print("finish First {} (after for {}s)".format(count, sleep))
+    print(f"finish First {count} (after for {sleep}s)")
 
 @multitasking.task
 def second(count):
     sleep = random.randint(1,10)/2
-    print("Start Second {} (sleeping for {}s)".format(count, sleep))
+    print(f"Start Second {count} (sleeping for {sleep}s)")
     time.sleep(sleep)
-    print("finish Second {} (after for {}s)".format(count, sleep))
+    print(f"finish Second {count} (after for {sleep}s)")
 
 if __name__ == "__main__":
     for i in range(0, 10):

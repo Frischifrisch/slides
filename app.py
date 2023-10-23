@@ -12,7 +12,7 @@ def show(filename):
     path = os.path.join(root, "html", filename)
     if os.path.isdir(path):
         if filename[-1] != "/":
-            return redirect(filename + "/")
+            return redirect(f"{filename}/")
         path = os.path.join(path, "index.html")
 
     if not os.path.exists(path):
@@ -23,8 +23,6 @@ def show(filename):
     #if ext and ext != '.html':
     mimetype = mimetypes.types_map.get(ext)
     app.logger.info(f"mimetype of '{filename}' is '{mimetype}'")
-        #add_header(f"Content-type: {mimetype}")
-
     with open(path, 'rb') as fh:
         content = fh.read()
     return Response(content, mimetype=mimetype)

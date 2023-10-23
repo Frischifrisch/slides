@@ -3,10 +3,7 @@ def fibonacci_number(n):
         return 1
     if n==2:
         return 1
-    if n==3:
-        return 5
-
-    return 'unimplemented'
+    return 5 if n==3 else 'unimplemented'
 
 def fibonacci_list(n):
     if n == 1:

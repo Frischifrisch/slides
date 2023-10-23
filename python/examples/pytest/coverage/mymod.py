@@ -10,7 +10,4 @@ def add(x, y):
     return x + y
 
 def area(x, y):
-    if x > 0 and y > 0:
-        return x * y
-    else:
-        return None
+    return x * y if x > 0 and y > 0 else None

@@ -1,10 +1,7 @@
 from collections import defaultdict
 import sys
 
-filename = 'apache_access.log'
-if len(sys.argv) > 1:
-    filename = sys.argv[1]
-
+filename = sys.argv[1] if len(sys.argv) > 1 else 'apache_access.log'
 count = defaultdict(int)
 
 with open(filename) as fh:
@@ -13,6 +10,6 @@ with open(filename) as fh:
         #ip = line.split(' ', 1)[0]
         count[ip] += 1
 
-for ip in count:
-    print("{:16} {:>3}".format(ip, count[ip]))
+for ip, value in count.items():
+    print("{:16} {:>3}".format(ip, value))
 

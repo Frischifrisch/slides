@@ -37,8 +37,7 @@ def main():
     urls = get_urls(limit)
     print(urls)
     start_time = time.time()
-    batch_size = int(limit/threads_count)
-    left_over = limit % threads_count
+    batch_size, left_over = divmod(limit, threads_count)
     batches = []
     end = 0
     for ix in range(threads_count):
@@ -53,7 +52,7 @@ def main():
     [ t.join() for t in threads ]
 
     end_time = time.time()
-    print("Elapsed time: {} for {} pages.".format(end_time-start_time, len(urls)))
+    print(f"Elapsed time: {end_time - start_time} for {len(urls)} pages.")
     print(titles)
 
 

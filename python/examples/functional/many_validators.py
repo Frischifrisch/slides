@@ -8,5 +8,5 @@ numbers = [90, 102, 101, 104]
 
 cond = [is_big, is_even]
 
-z = filter( lambda n: all([f(n) for f in cond]),   numbers)
+z = filter(lambda n: all(f(n) for f in cond), numbers)
 print(z) # [102, 104]

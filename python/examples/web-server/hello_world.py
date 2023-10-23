@@ -16,6 +16,6 @@ def hello_world(environ, start_response):
 
 port = 8080
 with make_server('0.0.0.0', port, hello_world) as httpd:
-    print("Serving on port {}...".format(port))
+    print(f"Serving on port {port}...")
     httpd.serve_forever()
 

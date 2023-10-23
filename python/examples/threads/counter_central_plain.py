@@ -21,9 +21,9 @@ for _ in range(num):
     c.run()
 end = time.time()
 
-print("Expected: {}".format(num * limit))
-print("Received: {}".format(cnt))
-print("Elapsed: {}".format(end-start))
+print(f"Expected: {num * limit}")
+print(f"Received: {cnt}")
+print(f"Elapsed: {end - start}")
 
 # Expected: 3000000
 # Received: 3000000

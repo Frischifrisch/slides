@@ -6,9 +6,7 @@ if len(sys.argv) != 4:
 filename, count, process_count = sys.argv[1:]
 
 command = [sys.executable, 'count.py', filename, count]
-processes = []
-for _ in range(int(process_count)):
-    processes.append(subprocess.Popen(command))
+processes = [subprocess.Popen(command) for _ in range(int(process_count))]
 print('Started')
 for proc in processes:
     proc.communicate()

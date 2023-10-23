@@ -14,8 +14,7 @@ for _ in range(int(count)):
             with open(filename, 'w') as fh:
                 fh.write("0\n")
         with open(filename, 'r') as fh:
-            number = int(fh.readline())
-            number += 1
+            number = int(fh.readline()) + 1
             with open(filename, 'w') as fh:
             #fh.seek(0,0)
                 fh.write(f"{number}\n")

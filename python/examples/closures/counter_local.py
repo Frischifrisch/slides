@@ -1,7 +1,5 @@
 def counter():
-    count = 0
-    count += 1
-    return count
+    return 0 + 1
 
 print(counter())
 print(counter())

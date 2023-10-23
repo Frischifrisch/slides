@@ -7,7 +7,7 @@ for word in words:
    counter[word] += 1
 
 for word in counter:
-   print("{}:{}".format(word, counter[word]))
+   print(f"{word}:{counter[word]}")
 
 
 

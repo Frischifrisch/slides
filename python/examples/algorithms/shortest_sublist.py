@@ -28,11 +28,7 @@ def shortest(numbers, limit):
     while True:
         #start < len(numbers) and end <= len(numbers) and start < end:
         if total >= limit:
-            if length is None:
-                length = 1 + end-start
-            else:
-                length = min(length, 1 + end-start)
-
+            length = 1 + end-start if length is None else min(length, 1 + end-start)
             total -= numbers[start]
             start += 1
             if start > end:

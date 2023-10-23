@@ -7,5 +7,5 @@ for num in numbers:
         count[int(char)] += 1
 
 for d in range(0, 10):
-    print("{}  {}".format(d, count[d]))
+    print(f"{d}  {count[d]}")
 

@@ -8,7 +8,5 @@ class Thing(object):
         data_file = self.data_file()
         with open(data_file) as fh:
             data = json.load(fh)
-            # ...
-            result = data['x'] + data['y']
-            return result
+            return data['x'] + data['y']
 

@@ -5,9 +5,7 @@ class Corp(object):
         Corp.people.append({ 'name': name, 'salary' : salary})
 
     def total(self):
-        self.total = 0
-        for n in Corp.people:
-            self.total += n['salary']
+        self.total = sum(n['salary'] for n in Corp.people)
         return self.total
 
 c = Corp()

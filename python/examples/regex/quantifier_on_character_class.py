@@ -10,20 +10,17 @@ strings = (
 )
 
 for line in strings:
-    match = re.search(r'-[abc]-', line)
-    if match:
+    if match := re.search(r'-[abc]-', line):
         print(line)
 print('=========================')
 
 for line in strings:
-    match = re.search(r'-[abc]+-', line)
-    if match:
+    if match := re.search(r'-[abc]+-', line):
         print(line)
 print('=========================')
 
 for line in strings:
-    match = re.search(r'-[abc]*-', line)
-    if match:
+    if match := re.search(r'-[abc]*-', line):
         print(line)
 
 

@@ -6,11 +6,11 @@ app.secret_key = 'blabla'
 @app.route("/",methods=['GET', 'POST'] )
 def main():
     color = session.get('color', 'FFFFFF')
-    app.logger.debug("Color: " + color)
+    app.logger.debug(f"Color: {color}")
 
     new_color = request.form.get('color', '')
     if re.search(r'^[0-9A-F]{6}$', new_color):
-        app.logger.debug('New color: ' + new_color)
+        app.logger.debug(f'New color: {new_color}')
         session['color'] = new_color
         color = new_color
 

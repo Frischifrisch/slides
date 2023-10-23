@@ -17,7 +17,7 @@ sorted_names = sorted(scores.keys(), key=lambda x: scores[x])
 print(sorted_names) # ["Foo", "Bar", "Abc", "Miu"]
 
 for k in sorted_names:
-    print("{} : {}".format(k, scores[k]))
+    print(f"{k} : {scores[k]}")
 
 # Foo : 10
 # Bar : 34

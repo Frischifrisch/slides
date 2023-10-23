@@ -12,7 +12,7 @@ original = cv.imread(filename)
 cv.imshow('Original', original)
 
 def rotate(img, angle, center=None):
-    height, width = img.shape[0:2]
+    height, width = img.shape[:2]
     if center is None:
         center = (width//2, height//2)
 

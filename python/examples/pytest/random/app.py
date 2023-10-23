@@ -8,7 +8,5 @@ class Game():
     def guess(self, guessed_number):
         if self.hidden == guessed_number:
             return 'match'
-        if guessed_number < self.hidden:
-            return 'too small'
-        return 'too big'
+        return 'too small' if guessed_number < self.hidden else 'too big'
 

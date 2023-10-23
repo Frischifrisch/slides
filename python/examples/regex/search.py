@@ -1,13 +1,11 @@
 import re
 
 text = 'The black cat climed'
-match = re.search(r'lac', text)
-if match:
+if match := re.search(r'lac', text):
     print("Matching")       # Matching
     print(match.group(0))   # lac
 
-match = re.search(r'dog', text)
-if match:
+if match := re.search(r'dog', text):
     print("Matching")
 else:
     print("Did NOT match")

@@ -5,6 +5,4 @@ def daily_task():
     print(now)
     if now.month == 1 and now.day == 1:
         return 'new_year'
-    if now.month == 2 and now.day == 29:
-        return 'leap_day'
-    return 'regular'
+    return 'leap_day' if now.month == 2 and now.day == 29 else 'regular'

@@ -1,6 +1,4 @@
 from typing import Any, Dict, Union
 
 #data:Dict[str, Any] = {}
-data:Dict[str, Union[int, str]] = {}
-data['name'] = 'foo'
-data['height'] = 190
+data: Dict[str, Union[int, str]] = {'name': 'foo', 'height': 190}

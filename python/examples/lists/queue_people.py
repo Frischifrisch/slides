@@ -14,8 +14,8 @@ while True:
         continue
 
     if inp == 'n':
-        if len(queue) > 0:
-            print("next is {}".format(queue.pop(0)))
+        if queue:
+            print(f"next is {queue.pop(0)}")
         else:
             print("the queue is empty")
         continue

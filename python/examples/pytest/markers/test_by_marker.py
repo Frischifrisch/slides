@@ -2,22 +2,22 @@ import pytest
 
 @pytest.mark.smoke
 def test_database_read():
-    assert True
+    pass
 
 @pytest.mark.security
 @pytest.mark.smoke
 def test_database_write():
-    assert True
+    pass
 
 @pytest.mark.security
 def test_database_forget():
-    assert True
+    pass
 
 @pytest.mark.smoke
 def test_ui_access():
-    assert True
+    pass
 
 @pytest.mark.security
 def test_ui_forget():
-    assert True
+    pass
 

@@ -15,7 +15,6 @@ class TestClass():
 
     def test_one(self):
         print("    one")
-        assert True
         print("    one after")
 
     def test_two(self):
@@ -25,5 +24,4 @@ class TestClass():
 
     def test_three(self):
         print("    three")
-        assert True
         print("    three after")

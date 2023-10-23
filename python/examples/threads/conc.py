@@ -9,11 +9,10 @@ thread_local = threading.local()
 
 def get_title(url):
     res = requests.get(url)
-    if res.status_code:
-        soup = BeautifulSoup(res.text, 'html.parser')
-        return None if soup.title is None else soup.title.string
-    else:
+    if not res.status_code:
         return None
+    soup = BeautifulSoup(res.text, 'html.parser')
+    return None if soup.title is None else soup.title.string
 
 
 def main():
@@ -25,7 +24,7 @@ def main():
     with open(filename) as fh:
         urls = list(map(lambda line: line.rstrip("\n"), fh))
     if len(urls) > limit:
-        urls = urls[0:limit]
+        urls = urls[:limit]
     #print(urls)
 
     start = time.monotonic()

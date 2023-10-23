@@ -8,8 +8,4 @@ if res == 'triangle':
     t.circle(100, steps=3)
 elif res == 'rectangle':
     t.circle(100, steps=4)
-else:
-    pass
-    
-
 turtle.exitonclick()

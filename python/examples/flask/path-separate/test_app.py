@@ -17,12 +17,12 @@ def test_user(web, uid):
     assert uid == rv.data.decode('utf-8')
 
 def test_user_root_slash(web):
-    rv = web.get(f'/user/')
+    rv = web.get('/user/')
     assert rv.status == '200 OK'
     assert b'User List' == rv.data
 
 def test_user_root(web):
-    rv = web.get(f'/user')
+    rv = web.get('/user')
     assert rv.status == '308 PERMANENT REDIRECT'
     assert rv.headers['Location'] == 'http://localhost/user/'
     assert b'<p>You should be redirected automatically to target URL:' in rv.data

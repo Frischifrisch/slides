@@ -12,13 +12,13 @@ def get_api_key():
     return config['openweathermap']['api']
 
 def get_weather(api_key, location):
-    url = "https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={}".format(location, api_key)
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={location}&units=metric&appid={api_key}"
     r = requests.get(url)
     return r.json()
 
 def main():
     if len(sys.argv) != 2:
-        exit("Usage: {} LOCATION".format(sys.argv[0]))
+        exit(f"Usage: {sys.argv[0]} LOCATION")
     location = sys.argv[1]
 
     api_key = get_api_key()

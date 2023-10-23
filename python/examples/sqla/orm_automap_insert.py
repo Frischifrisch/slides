@@ -5,7 +5,7 @@ from sqlalchemy.ext.automap import automap_base
 Base = automap_base()
 
 dbname = 'imdb.db'
-engine = create_engine('sqlite:///' + dbname)
+engine = create_engine(f'sqlite:///{dbname}')
 
 Base.prepare(engine, reflect=True)
 Genre  = Base.classes.genre

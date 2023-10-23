@@ -10,10 +10,7 @@ def get_urls(content):
     urls = []
     root = ET.fromstring(content)
     for child in root:
-        for ch in child:
-            if ch.tag.endswith('loc'):
-                urls.append(ch.text)
-
+        urls.extend(ch.text for ch in child if ch.tag.endswith('loc'))
     #print(len(urls)) # 2653
     MAX = 20
     if len(urls) > MAX:
@@ -41,16 +38,14 @@ def main():
 
     urls = get_urls(resp.content)
 
-    titles = []
 #     for url in urls:
 #         titles.append(get_title(url))
 #     titles = list(map(get_title, urls))
     with Pool(5) as pool:
         results = pool.map(get_title, urls)
-    for r in results:
-        titles.append(r)
+    titles = list(results)
     end = time.time()
-    print("Elapsed time: {} for {} pages.".format(end-start, len(urls)))
+    print(f"Elapsed time: {end - start} for {len(urls)} pages.")
     print(list(titles))
     print("DONE")
 

@@ -3,7 +3,6 @@ import time
 
 with open("first.txt", "w") as fh:
     fh.flush()
-    pass
 print(f"time: {time.time()}")
 #time.sleep(0.01)
 with open("second.txt", "w") as fh:

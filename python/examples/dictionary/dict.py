@@ -1,5 +1,4 @@
-user = {}
-user['name'] = 'Foobar'
+user = {'name': 'Foobar'}
 print(user)        # {'name': 'Foobar'}
 
 user['email'] = 'foo@bar.com'

@@ -1,4 +1,4 @@
 name = "Foo Bar"
 
 print("{:s}".format(name))
-print("{}".format(name))
+print(f"{name}")

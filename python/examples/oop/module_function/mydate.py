@@ -1,8 +1,5 @@
 def is_valid_date(year, month, day):
-    if 0 <= year <= 3000 and  1 <= month <= 12 and 1 <= day <= 31:
-        return True
-    else:
-        return False
+    return 0 <= year <= 3000 and 1 <= month <= 12 and 1 <= day <= 31
 
 class Date(object):
     def __init__(self, Year, Month, Day):
@@ -13,6 +10,6 @@ class Date(object):
         self.day   = Day
 
     def __str__(self):
-        return 'Date({}, {}, {})'.format(self.year, self.month, self.day)
+        return f'Date({self.year}, {self.month}, {self.day})'
 
 

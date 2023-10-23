@@ -5,7 +5,7 @@ import os
 filename = 'counter.json'
 
 if len(sys.argv) != 2:
-    print("Usage: " + sys.argv[0] + " COUNTER")
+    print(f"Usage: {sys.argv[0]} COUNTER")
     exit()
 
 counter = {}

@@ -9,8 +9,7 @@ def main():
 
     rows = []
     with open(filename) as fh:
-        for row in fh:
-            rows.append(row.rstrip("\n"))
+        rows.extend(row.rstrip("\n") for row in fh)
     with open(outfile, 'w') as fh:
         for a in rows:
             for b in rows:

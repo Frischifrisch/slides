@@ -1,11 +1,7 @@
 import sys
 import os
 
-to_dir = '..'
-# to_dir = '/path/to/some/dir'
-if len(sys.argv) == 2:
-    to_dir = sys.argv[1]
-
+to_dir = sys.argv[1] if len(sys.argv) == 2 else '..'
 current_dir = os.getcwd()
 print(current_dir)
 

@@ -2,7 +2,7 @@ from passlib.hash import pbkdf2_sha256
 import sys
 
 if len(sys.argv) != 2:
-   exit("Usage: {} PASSWORD".format(sys.argv[0]))
+   exit(f"Usage: {sys.argv[0]} PASSWORD")
 
 pw = sys.argv[1]
 

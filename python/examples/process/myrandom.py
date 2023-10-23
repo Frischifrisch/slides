@@ -3,10 +3,7 @@ import random
 import time
 
 def add_random(result_filename, count, wait, exception=''):
-    total = 0
-    for _ in range(int(count)):
-        total += random.random()
-
+    total = sum(random.random() for _ in range(int(count)))
     time.sleep(float(wait))
     if exception:
         raise Exception(exception)
@@ -16,6 +13,6 @@ def add_random(result_filename, count, wait, exception=''):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 4 and len(sys.argv) != 5:
+    if len(sys.argv) not in [4, 5]:
         exit(f"Usage: {sys.argv[0]} RESULT_FILENAME COUNT WAIT [EXCEPTION]")
     add_random(*sys.argv[1:])

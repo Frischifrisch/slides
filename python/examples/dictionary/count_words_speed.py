@@ -6,8 +6,7 @@ def generate_list_of_words(number, repeat):
     #words = ['Wombat', 'Rhino', 'Sloth', 'Tarantula', 'Sloth', 'Rhino', 'Sloth']
     words = []
     for ix in range(number):
-        for _ in range(repeat):
-            words.append(str(ix))
+        words.extend(str(ix) for _ in range(repeat))
     return words
 
 def plain_counter(words):

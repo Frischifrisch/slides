@@ -4,10 +4,10 @@ import sys
 class ThreadedCount(threading.Thread):
     def run(self):
         thread = threading.current_thread()
-        print('{} - start'.format(thread.name))
+        print(f'{thread.name} - start')
         for c in range(10):
-            print('{} - count {}'.format(thread.name, c))
-        print('{} - end'.format(thread.name))
+            print(f'{thread.name} - count {c}')
+        print(f'{thread.name} - end')
         return
 
 a = ThreadedCount()
@@ -17,7 +17,7 @@ a.start()
 b.start()
 c.start()
 
-print('main - running {} threads'.format(threading.active_count()))
+print(f'main - running {threading.active_count()} threads')
 
 a.join()
 b.join()

@@ -8,7 +8,7 @@ def process_file(filename):
             if len(line) > 0 and line[0] == '#':
                 return
 
-            if len(line) > 1 and line[0:2] == '//':
+            if len(line) > 1 and line[:2] == '//':
                 return
 
             # process the line

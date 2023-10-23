@@ -4,7 +4,7 @@ def swap(txt):
     >>> half("abcd"))
     cdab
     '''
-    return txt[int(len(txt)/2):] + txt[:int(len(txt)/2)]
+    return txt[len(txt) // 2:] + txt[:len(txt) // 2]
 
 def average(*numbers):
     '''

@@ -17,7 +17,7 @@ def main():
         print(err.address)
 
         print(err)
-        print("Type: " + type(err).__name__)
+        print(f"Type: {type(err).__name__}")
     except Exception as err:
         print(f"Some other issue {err}")
 

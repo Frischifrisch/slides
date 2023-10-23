@@ -1,7 +1,7 @@
-english = set(['door', 'car', 'lunar', 'era'])
-spanish = set(['era', 'lunar', 'hola'])
+english = {'door', 'car', 'lunar', 'era'}
+spanish = {'era', 'lunar', 'hola'}
 
-words = set(['door', 'lunar'])
+words = {'door', 'lunar'}
 
 
 print('issubset: ', words.issubset( english ))

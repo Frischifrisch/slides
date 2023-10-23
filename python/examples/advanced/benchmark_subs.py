@@ -2,18 +2,12 @@ import timeit
 
 def one_by_one():
     import random
-    text = ""
-    for i in range(200):
-        text += chr(65 + random.randrange(0, 26))
-    return text
+    return "".join(chr(65 + random.randrange(0, 26)) for _ in range(200))
 
 def at_once():
     import random
-    chars = []
-    for i in range(200):
-        chars.append(chr(65 + random.randrange(0, 26)))
-    text = ''.join(chars)
-    return text
+    chars = [chr(65 + random.randrange(0, 26)) for _ in range(200)]
+    return ''.join(chars)
 
 print(timeit.timeit('one_by_one()',
     setup="from __main__ import one_by_one", number=10000))

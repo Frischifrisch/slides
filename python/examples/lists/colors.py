@@ -1,6 +1,6 @@
 colors = ['blue', 'yellow', 'black', 'purple']
 for ix in range(len(colors)):
-    print("{}) {}".format(ix+1, colors[ix]))
+    print(f"{ix + 1}) {colors[ix]}")
 
 selection = input("Select color: ")
 if not selection.isdecimal():

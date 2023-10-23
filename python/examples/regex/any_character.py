@@ -16,6 +16,5 @@ strings = [
 
 for s in strings:
     print('str:  ', s)
-    match = re.search(r'#.#', s)
-    if match:
+    if match := re.search(r'#.#', s):
         print('match:', match.group(0))

@@ -12,14 +12,11 @@ class ThreadedCount(threading.Thread):
         print(f'{thread.name} - end')
         return
 
-threads = []
-for ix in range(num_threads):
-    threads.append(ThreadedCount())
-
+threads = [ThreadedCount() for _ in range(num_threads)]
 for th in threads:
     th.start()
 
-print('main - running {} threads'.format(threading.active_count()))
+print(f'main - running {threading.active_count()} threads')
 
 for th in threads:
     th.join()

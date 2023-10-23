@@ -4,8 +4,7 @@ from bs4 import BeautifulSoup
 
 def fetch(url):
     response = requests.get(url)
-    content = response.text
-    return content
+    return response.text
 
 def main():
     if len(sys.argv) < 2:

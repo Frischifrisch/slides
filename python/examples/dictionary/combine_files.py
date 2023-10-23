@@ -18,4 +18,4 @@ with open('examples/files/b.txt') as fh:
 
 with open('out.txt', 'w') as fh:
     for k in sorted(c.keys()):
-        fh.write("{}={}\n".format(k, c[k]))
+        fh.write(f"{k}={c[k]}\n")

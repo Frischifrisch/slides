@@ -1,22 +1,22 @@
 import pytest
 
 def test_pass():
-    assert True
+    pass
 
 def test_fail():
     assert False
 
 @pytest.mark.skip(reason="Unconditional skip")
 def test_with_skip():
-    assert True
+    pass
 
 @pytest.mark.skipif(True, reason="Conditional skip")
 def test_with_skipif():
-    assert True
+    pass
 
 @pytest.mark.skipif(False, reason="Conditional skip")
 def test_with_skipif_but_run():
-    assert True
+    pass
 
 
 @pytest.mark.xfail(reason = "Expect to fail and failed")
@@ -25,4 +25,4 @@ def test_with_xfail_and_fail():
 
 @pytest.mark.xfail(reason = "Expect to fail but passed")
 def test_with_xfail_but_pass():
-   assert True
+    pass

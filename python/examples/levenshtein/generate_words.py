@@ -17,10 +17,8 @@ def main():
     count = int(sys.argv[1])
     with open(filename, 'w') as fh:
         for _ in range(count):
-            word = ''
             length = random.randrange(min_len, max_len+1)
-            for _ in range(length):
-                word += random.choice(string.ascii_lowercase)
+            word = ''.join(random.choice(string.ascii_lowercase) for _ in range(length))
             fh.write(word + "\n")
 
 main()

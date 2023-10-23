@@ -4,10 +4,8 @@ def create_bank(n = 0):
         nonlocal balance
         prev_balance = balance
         balance += change
-        if prev:
-            return prev_balance
-        else:
-            return balance
+        return prev_balance if prev else balance
+
     return bnk
 
 

@@ -8,9 +8,9 @@ class Example(tk.Frame):
 
     def say_hi(self):
         print("hi there, everyone! ")
-        print("Name: {}".format(self.name.get()))
-        print("Password: {}".format(self.password.get()))
-        print("count: {}".format(self.count.get()))
+        print(f"Name: {self.name.get()}")
+        print(f"Password: {self.password.get()}")
+        print(f"count: {self.count.get()}")
         self.password.delete(0, 'end')
 
 

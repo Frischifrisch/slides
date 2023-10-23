@@ -53,7 +53,7 @@ country = input('Please enter the country of your location: ')
 
 for k in legal_drinking_age:
     if country in legal_drinking_age[k]:
-        print('The minimum legal drinking age in your location is: {} years'.format(k))
+        print(f'The minimum legal drinking age in your location is: {k} years')
         if age >= k:
             exit('You are allowed to consume alcohol in your location')
         else:

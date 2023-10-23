@@ -30,7 +30,7 @@ skip = [
     'python/examples/package/use_project/proj2_1.py',
 ]
 
-skip_flake = set([
+skip_flake = {
     'python-programming/examples/sqla/orm_create_db.py',
     'python-programming/examples/decorators/function_assignment.py',
     'python-programming/examples/patterns/replace_print.py',
@@ -42,7 +42,7 @@ skip_flake = set([
     'python-programming/examples/linters/importer.py',
     'python-programming/examples/twisted/web_client.py',
     'python-programming/examples/flask/simple_auth/test_app.py',
-])
+}
 
 def _run(cmd):
     proc = subprocess.Popen(cmd,

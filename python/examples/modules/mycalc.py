@@ -1,5 +1,5 @@
 def test_add():
-    print('Testing  {}'.format(__file__))
+    print(f'Testing  {__file__}')
     assert add(1, 1) == 2
     assert add(-1, 1) == 0
     # assert add(-99, 1) == 0 # AssertionError

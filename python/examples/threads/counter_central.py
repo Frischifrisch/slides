@@ -19,14 +19,14 @@ class ThreadedCount(threading.Thread):
         return
 
 start = time.time()
-threads = [ ThreadedCount() for n in range(num) ]
+threads = [ThreadedCount() for _ in range(num)]
 [ t.start() for t in threads ]
 [ t.join() for t in threads ]
 end = time.time()
 
-print("Expected: {}".format(num * limit))
-print("Received: {}".format(cnt))
-print("Elapsed: {}".format(end-start))
+print(f"Expected: {num * limit}")
+print(f"Received: {cnt}")
+print(f"Elapsed: {end - start}")
 
 # Expected: 3000000
 # Received: 2659032

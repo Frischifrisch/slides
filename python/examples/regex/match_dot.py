@@ -9,23 +9,20 @@ cases = [
 
 for case in cases:
     print(case)
-    match = re.search(r'.', case)   # Match any character
-    if match:
+    if match := re.search(r'.', case):
         print(match.group(0))
 
 print("----")
 
 for case in cases:
     print(case)
-    match = re.search(r'\.', case)  # Match a dot
-    if match:
+    if match := re.search(r'\.', case):
         print(match.group(0))
 
 print("----")
 
 for case in cases:
     print(case)
-    match = re.search(r'[.]', case) # Match a dot
-    if match:
+    if match := re.search(r'[.]', case):
         print(match.group(0))
 

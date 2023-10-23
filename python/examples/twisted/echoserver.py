@@ -6,7 +6,7 @@ class Echo(protocol.Protocol):
     def dataReceived(self, data):
         text = data.decode('utf8')
         print(f"Received: {text}")
-        self.transport.write("You said: {}".format(text).encode('utf8'))
+        self.transport.write(f"You said: {text}".encode('utf8'))
 
 class EchoFactory(protocol.Factory):
     def buildProtocol(self, addr):

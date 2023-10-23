@@ -10,7 +10,7 @@ def grouped(iterable, n):
 
 l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for x, y, z in grouped(l, 3):
-   print("{} + {} + {} = {}".format(x, y, z, x + y + z))
+    print(f"{x} + {y} + {z} = {x + y + z}")
 
 # 1 + 2 + 3 = 6
 # 4 + 5 + 6 = 15

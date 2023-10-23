@@ -5,9 +5,8 @@ def main():
         range1 = x.find("c",n)
         if range1 == -1:
             break
-        else:
-            print(range1)
-            n = n + 1
+        print(range1)
+        n = n + 1
 
 main()
 

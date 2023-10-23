@@ -12,9 +12,8 @@ def hello():
 
 @eapp.route("/echo")
 def echo():
-    answer = request.args.get('text')
-    if answer:
-        return "You said: " + answer
+    if answer := request.args.get('text'):
+        return f"You said: {answer}"
     else:
         return "Nothing to say?"
 

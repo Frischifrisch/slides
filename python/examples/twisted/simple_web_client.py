@@ -4,7 +4,7 @@ import sys
 
 def printPage(result):
     print("Page")
-    print('Size of the returned page is {}'.format(len(result)))
+    print(f'Size of the returned page is {len(result)}')
 
 def printError(error):
     print("Error")
@@ -16,7 +16,7 @@ def stop(result):
     reactor.stop()
 
 if (len(sys.argv) != 2):
-    sys.stderr.write("Usage: python " + sys.argv[0] + " <URL>\n")
+    sys.stderr.write(f"Usage: python {sys.argv[0]}" + " <URL>\n")
     exit(1)
 
 d = getPage(sys.argv[1])

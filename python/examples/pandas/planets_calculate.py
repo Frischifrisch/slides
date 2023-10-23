@@ -1,13 +1,8 @@
 import sys
 import pandas as pd
 
-filename = "planets.csv"
-center = 'Earth'
-if len(sys.argv) > 1:
-    center   = sys.argv[1]
-if len(sys.argv) > 2:
-    filename = sys.argv[2]
-
+center = sys.argv[1] if len(sys.argv) > 1 else 'Earth'
+filename = sys.argv[2] if len(sys.argv) > 2 else "planets.csv"
 df = pd.read_csv(filename)
 
 this = df[ df['Planet name'] == center ]

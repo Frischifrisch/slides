@@ -13,9 +13,7 @@ def add():
         return jsonify({ 'error': 'Missing input' }), 400
     a = int(data.get('a', 0))
     b = int(data.get('b', 0))
-    div = 'na'
-    if b != 0:
-        div = a/b
+    div = a/b if b != 0 else 'na'
     return jsonify({
         "a"        :  a,
         "b"        :  b,

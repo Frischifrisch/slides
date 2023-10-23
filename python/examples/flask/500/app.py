@@ -11,4 +11,3 @@ Main
 @app.route("/bad")
 def bad():
     raise Exception("This is a bad page")
-    return 'Bad page'

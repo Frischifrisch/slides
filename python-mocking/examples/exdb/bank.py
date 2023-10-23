@@ -21,7 +21,7 @@ class Bank():
   
     def deposit(self, name, amount):
         current = self.db.get(name)
-        if current == None:
+        if current is None:
             self.db.insert(name, amount)
         else:
             self.db.update(name, current+amount)

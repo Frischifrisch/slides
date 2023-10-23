@@ -1,7 +1,7 @@
 import numpy as np
 
 def fibo(n):
-    if n == 1 or n == 2:
+    if n in [1, 2]:
         return 1
     a, b = 1, 1
     for _ in range(n-2):

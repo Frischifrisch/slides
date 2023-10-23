@@ -1,7 +1,6 @@
 import yaml
 
 def test_some_data(config):
-    assert True
     print(config)
 
     with open(config) as fh:

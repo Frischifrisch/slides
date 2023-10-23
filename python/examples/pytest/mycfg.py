@@ -8,14 +8,12 @@ def parse_file(filename):
             if re.search(r'=', row):
                 k, v = re.split(r'\s*=\s*', row)
                 data[k] = v
-            else:
-                pass # error reporting?
     return data
 
 def save_file(filename, data):
     with open(filename, 'w') as fh:
         for k in data:
-            fh.write("{}={}\n".format(k, data[k]))
+            fh.write(f"{k}={data[k]}\n")
 
 if __name__ == '__main__':
     print(parse_file('a.cfg'))

@@ -1,7 +1,7 @@
 text = "abcd"
 print(text)     # abcd
 
-text = text + "ef"
+text += "ef"
 print(text)     # abcdef
 
 other = text

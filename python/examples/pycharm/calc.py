@@ -1,10 +1,8 @@
 def add(x, y):
-    z = x + y
-    return z
+    return x + y
 
 def multiply(x, y):
-    z = x * y
-    return z
+    return x * y
 
 x = 2
 y = 3

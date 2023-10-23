@@ -9,7 +9,7 @@ print("{:X}".format(val)) #  hexa:      2A
 print("{:n}".format(val)) #  number:    42
 
 
-print("{}".format(val))   # 42 (same as decimal)
+print(f"{val}")
 
 
 # Zero padding

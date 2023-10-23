@@ -16,5 +16,5 @@ def test_with_param(name):
 
 @pytest.mark.parametrize("name", ["banana"])
 def test_without_param():
-    print(f"Test not using param")
+    print("Test not using param")
 

@@ -20,9 +20,7 @@ def api_info():
 def add():
     a = int(request.args.get('a', 0))
     b = int(request.args.get('b', 0))
-    div = 'na'
-    if b != 0:
-        div = a/b
+    div = a/b if b != 0 else 'na'
     return jsonify({
         "a"        :  a,
         "b"        :  b,
