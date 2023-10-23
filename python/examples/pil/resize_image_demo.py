@@ -1,7 +1,7 @@
 from PIL import Image
 import sys
 
-if len(sys.argv) != 3 and len(sys.argv) != 4:
+if len(sys.argv) not in [3, 4]:
     exit(f"Usage: {sys.argv[0]} FILENAME %CHANGE OUTFILE")
 
 in_file = sys.argv[1]

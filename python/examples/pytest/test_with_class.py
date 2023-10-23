@@ -1,7 +1,6 @@
 class TestClass():
     def test_one(self):
         print("one")
-        assert True
         print("one after")
 
     def test_two(self):

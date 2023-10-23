@@ -13,8 +13,6 @@ with open(os.path.join(root, 'packets.json')) as fh:
 def test_packetes(filename):
     filepath = os.path.join(root, filename)
 
-    results = []
-    for packet in Packets(filepath):
-        results.append(packet)
+    results = list(Packets(filepath))
     assert results == expected_results
 

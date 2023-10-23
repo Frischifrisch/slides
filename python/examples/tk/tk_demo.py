@@ -8,15 +8,14 @@ def scary_action():
 
 
 def run_code():
-    text = ""
-    text += "Name: {}\n".format(name.get())
-    text += "Password: {}\n".format(password.get())
-    text += "Animal: {}\n".format(animal.get())
-    text += "Country: {}\n".format(country.get())
+    text = f"Name: {name.get()}\n"
+    text += f"Password: {password.get()}\n"
+    text += f"Animal: {animal.get()}\n"
+    text += f"Country: {country.get()}\n"
     text += "Colors: "
     for ix in range(len(colors)):
         if colors[ix].get():
-            text += color_names[ix] + " "
+            text += f"{color_names[ix]} "
     text += "\n"
 
     selected = list_box.curselection()  # returns a tuple
@@ -24,7 +23,7 @@ def run_code():
     text += ', '.join([list_box.get(idx) for idx in selected])
     text += "\n"
 
-    text += "Filename: {}\n".format(os.path.basename(filename_entry.get()))
+    text += f"Filename: {os.path.basename(filename_entry.get())}\n"
 
     resp = messagebox.askquestion(title="Running with", message=f"Shall I start running with the following values?\n\n{text}")
     if resp == 'yes':

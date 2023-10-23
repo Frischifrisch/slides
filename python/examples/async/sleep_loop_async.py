@@ -7,10 +7,7 @@ async def sleep(cnt, sec):
     print(f"End {cnt}")
 
 async def main():
-    co_routines = []
-    for i in range(4):
-        co_routines.append(sleep(i, 1))
-
+    co_routines = [sleep(i, 1) for i in range(4)]
     for t in co_routines:
         await t
 

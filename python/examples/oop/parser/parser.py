@@ -31,14 +31,13 @@ def parse(filename):
                 in_verbatim = True
                 continue
 
-            match = re.search(r'\A(#{1,2})\s+(.*?)\s*\Z', line)
-            if match:
+            if match := re.search(r'\A(#{1,2})\s+(.*?)\s*\Z', line):
                 if text != '':
                     dom.append({
                         'p': text
                     })
                     text = ''
-                h = 'h' + str( len(match.group(1)) )
+                h = f'h{len(match.group(1))}'
                 dom.append({
                     h : match.group(2)
                 })

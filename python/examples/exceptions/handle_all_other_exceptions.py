@@ -8,10 +8,10 @@ for filename in files:
     try:
         module.read_and_divide(filename)
     except ZeroDivisionError:
-        print("Cannot divide by 0 in file {}".format(filename))
+        print(f"Cannot divide by 0 in file {filename}")
     except IOError:
-        print("Cannot open file {}".format(filename))
+        print(f"Cannot open file {filename}")
     except Exception as ex:
-        print("Exception type {} {} in file {}".format(type(ex).__name__, ex, filename))
+        print(f"Exception type {type(ex).__name__} {ex} in file {filename}")
 
 

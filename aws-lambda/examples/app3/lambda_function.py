@@ -8,9 +8,14 @@ def lambda_handler(event, context):
             'headers': { 'Content-Type': 'application/json' },
             'body': json.dumps({ 'error': 'Missing queryStringParameters' })
         }
-        
-    
-    if event['queryStringParameters'] == None or 'a' not in event['queryStringParameters'] or 'b' not in event['queryStringParameters'] or 'operation' not in event['queryStringParameters']:
+
+
+    if (
+        event['queryStringParameters'] is None
+        or 'a' not in event['queryStringParameters']
+        or 'b' not in event['queryStringParameters']
+        or 'operation' not in event['queryStringParameters']
+    ):
         return {
             'statusCode': 400,
             'headers': { 'Content-Type': 'application/json' },
@@ -27,8 +32,10 @@ def lambda_handler(event, context):
     else:
         return {
             'statusCode': 400,
-            'headers': { 'Content-Type': 'application/json' },
-            'body': json.dumps({ 'error': 'Unsupported operation: "{}"'.format(operation) })
+            'headers': {'Content-Type': 'application/json'},
+            'body': json.dumps(
+                {'error': f'Unsupported operation: "{operation}"'}
+            ),
         }
 
     return {

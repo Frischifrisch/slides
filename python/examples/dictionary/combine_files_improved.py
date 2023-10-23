@@ -11,5 +11,5 @@ for filename in (['examples/files/a.txt', 'examples/files/b.txt']):
 
 with open('out.txt', 'w') as fh:
     for key, value in sorted(combined.items()):
-        print("{}={}".format(key, value))
-        fh.write("{}={}\n".format(key, value))
+        print(f"{key}={value}")
+        fh.write(f"{key}={value}\n")

@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 
 dbname = 'test.db'
 
-engine = create_engine('sqlite:///' + dbname)
+engine = create_engine(f'sqlite:///{dbname}')
 result = engine.execute('SELECT * FROM person')
 
 for row in result:

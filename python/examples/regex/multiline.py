@@ -11,20 +11,16 @@ postfix
 '''
 
 regex = r'^Start[\d\D]*End$'
-m = re.search(regex, line)
-if (m):
+if m := re.search(regex, line):
     print('line')
 
-m = re.search(regex, text)
-if (m):
+if m := re.search(regex, text):
     print('text')
 
 print('-' * 10)
 
-m = re.search(regex, line, re.MULTILINE)
-if (m):
+if m := re.search(regex, line, re.MULTILINE):
     print('line')
 
-m = re.search(regex, text, re.MULTILINE)
-if (m):
+if m := re.search(regex, text, re.MULTILINE):
     print('text')

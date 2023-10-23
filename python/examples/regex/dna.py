@@ -3,14 +3,12 @@ import random
 
 chars = ['G', 'A', 'T', 'C']
 dna = 'AT'
-for i in range(100):
+for _ in range(100):
     dna += random.choice(chars)
 
 print(dna)
 
-# finds the first one, not necessarily the longest one
-match = re.search(r"([GATC]+).*\1", dna)
-if match:
+if match := re.search(r"([GATC]+).*\1", dna):
     print(match.group(1))
 
 '''
@@ -26,9 +24,7 @@ length = 1
 result = ''
 while True:
     regex = r'([GATC]{' + str(length) + r'}).*\1'
-    #print(regex)
-    m = re.search(regex, dna)
-    if m:
+    if m := re.search(regex, dna):
         result = m.group(1)
         length += 1
     else:

@@ -7,7 +7,7 @@ def pairwise(iterable):
 
 l = [1, 2, 3, 4, 5, 6, 7]
 for x, y in pairwise(l):
-   print("{} + {} = {}".format(x, y, x + y))
+    print(f"{x} + {y} = {x + y}")
 
 # 1 + 2 = 3
 # 3 + 4 = 7

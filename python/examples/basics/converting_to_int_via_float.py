@@ -10,6 +10,6 @@ d = int( float(a) )
 print(d)                   # 2
 print( type(d) )           # <class 'int'>
 
-print( int( float(2.1) ))  # 2
+print(int(2.1))
 print( int( float("2") ))  # 2
 print( int( float(2) ))    # 2

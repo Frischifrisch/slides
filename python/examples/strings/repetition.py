@@ -1,7 +1,7 @@
 name = 2 * 'Jar '
 print(name)        # Jar Jar
 
-full_name = name + 'Binks'
+full_name = f'{name}Binks'
 print(full_name)   # Jar Jar Binks
 
 

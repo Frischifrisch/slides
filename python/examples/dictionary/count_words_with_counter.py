@@ -7,8 +7,8 @@ for word in words:
    cnt[word] += 1
 
 print(cnt)
-for word in cnt.keys():
-   print("{}:{}".format(word, cnt[word]))
+for word in cnt:
+   print(f"{word}:{cnt[word]}")
 
 
 

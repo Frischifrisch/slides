@@ -8,12 +8,10 @@ def add_grades(filename):
         for line in fh:
             if re.search(r'^\s*(#.*)?$', line):
                 continue
-            match = re.search(r'^\s*(\w+)\s*:\s*(\d+)\s*$', line)
-            if match:
-                name = match.group(1)
-                value = int(match.group(2))
-            else:
+            if not (match := re.search(r'^\s*(\w+)\s*:\s*(\d+)\s*$', line)):
                 raise Exception(f"Invalid row: '{line}'")
+            name = match.group(1)
+            value = int(match.group(2))
             if name not in grades:
                 grades[name] = 0
             grades[name] += value

@@ -17,11 +17,9 @@ values = [
 
 for val in values:
     print(val)
-    match = re.search(r'\w', val)
-    if match:
+    if match := re.search(r'\w', val):
         print('Match ', match.group(0))
 
-    match = re.search(r'\w', val, re.ASCII)
-    if match:
+    if match := re.search(r'\w', val, re.ASCII):
         print('Match ASCII ', match.group(0))
 

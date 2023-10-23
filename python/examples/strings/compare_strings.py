@@ -1,5 +1,5 @@
 mode = input("Mode of comparision: [length|ascii]")
-if mode != "length" and mode != "ascii":
+if mode not in ["length", "ascii"]:
     print("Not good")
     exit()
 

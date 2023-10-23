@@ -1,17 +1,19 @@
 def positive(num):
    if type(num).__name__ == 'float':
-       raise Exception("The given parameter {} is a float and not an int.".format(num))
+      raise Exception(f"The given parameter {num} is a float and not an int.")
 
    if type(num).__name__ != 'int':
-       raise Exception("The given parameter {} is of type {} and not int.".format(num, type(num).__name__))
+      raise Exception(
+          f"The given parameter {num} is of type {type(num).__name__} and not int."
+      )
 
    if num < 0:
-       raise Exception("The given number {} is not positive.".format(num))
+      raise Exception(f"The given number {num} is not positive.")
 
 for val in [14, 24.3, "hi", -10]:
    print(val)
    print(type(val).__name__)
    try:
-       positive(val)
+      positive(val)
    except Exception as ex:
-       print("Exception: {}".format(ex))
+      print(f"Exception: {ex}")

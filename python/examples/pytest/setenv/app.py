@@ -11,7 +11,4 @@ def get_python_version():
         raise Exception(f"Error exit {proc.returncode}")
     #if err:
     #    raise Exception(f"Error {err}")
-    if out:
-        return out.decode('utf8') # In Python 3.8.6
-    else:
-        return err.decode('utf8') # In Python 2.7.18
+    return out.decode('utf8') if out else err.decode('utf8')

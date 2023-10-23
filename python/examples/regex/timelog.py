@@ -2,7 +2,7 @@ import sys
 
 
 if len(sys.argv) < 2:
-   exit("Usage: {} FILENAME".format(sys.argv[0]))
+   exit(f"Usage: {sys.argv[0]} FILENAME")
 
 
 
@@ -31,32 +31,29 @@ def read_file(filename):
 
 def process_day(entries):
    for i in range(len(entries)-1):
-       start = entries[i]['start']
-       title = entries[i]['title']
-       end   = entries[i+1]['start']
-       print("{}-{} {}".format(start, end, title))
+      start = entries[i]['start']
+      title = entries[i]['title']
+      end   = entries[i+1]['start']
+      print(f"{start}-{end} {title}")
 
-       # manual way to parse timestamp and calculate elapsed time
-       # as we have not learned to use the datetim module yet
-       start_hour, start_min = start.split(':')
-       end_hour, end_min = end.split(':')
-       start_in_min = 60*int(start_hour) + int(start_min)
-       end_in_min = 60*int(end_hour) + int(end_min)
-       elapsed_time = end_in_min - start_in_min
-       #print(elapsed_time)
+      # manual way to parse timestamp and calculate elapsed time
+      # as we have not learned to use the datetim module yet
+      start_hour, start_min = start.split(':')
+      end_hour, end_min = end.split(':')
+      start_in_min = 60*int(start_hour) + int(start_min)
+      end_in_min = 60*int(end_hour) + int(end_min)
+      elapsed_time = end_in_min - start_in_min
+      #print(elapsed_time)
 
-       if title not in data:
-           data[title] = 0
-       data[title] += elapsed_time
+      if title not in data:
+          data[title] = 0
+      data[title] += elapsed_time
 
 
    print('')
 
 def print_summary():
-   total = 0
-   for val in data.values():
-       total += val
-
+   total = sum(data.values())
    for key in sorted( data.keys() ):
        print("{:20}     {:4} minutes  {:3}%".format(key, data[key], int(100 * data[key]/total)))
 

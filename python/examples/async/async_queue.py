@@ -6,9 +6,7 @@ import sys
 queue = [1] * 10
 print(f"Total: {sum(queue)}")
 
-parallel = 1
-if len(sys.argv) == 2:
-    parallel = int(sys.argv[1])
+parallel = int(sys.argv[1]) if len(sys.argv) == 2 else 1
 
 async def worker(wid):
     while queue:
@@ -20,9 +18,7 @@ async def worker(wid):
         print(f"Worker {wid} finished job {job}")
 
 async def main():
-    tasks = []
-    for wid in range(parallel):
-        tasks.append( asyncio.create_task(worker(wid)) )
+    tasks = [asyncio.create_task(worker(wid)) for wid in range(parallel)]
     await asyncio.gather(*tasks) 
 
 

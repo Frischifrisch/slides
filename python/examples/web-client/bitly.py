@@ -17,8 +17,10 @@ def shorten(uri):
 
     data = response.json()
 
-    if not data['status_code'] == 200:
-        exit("Unexpected status_code: {} in bitly response. {}".format(data['status_code'], response.text))
+    if data['status_code'] != 200:
+        exit(
+            f"Unexpected status_code: {data['status_code']} in bitly response. {response.text}"
+        )
     return data['data']['url']
 
 print(shorten("http://code-maven.com/"))

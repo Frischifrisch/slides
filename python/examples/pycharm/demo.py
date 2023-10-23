@@ -15,10 +15,7 @@ def main():
     print("after count")
 
 def get_limit():
-    limit = 10
-    if len(sys.argv) == 2:
-        limit = int(sys.argv[1])
-    return limit
+    return int(sys.argv[1]) if len(sys.argv) == 2 else 10
 
 def count(limit):
     for ix in range(limit):

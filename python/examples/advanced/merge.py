@@ -13,14 +13,11 @@ infiles = sys.argv[2:]
 def myopen(outfile, *infiles):
     #print(len(infiles))
     out = open(outfile, 'w')
-    ins = []
-    for filename in infiles:
-        ins.append(open(filename, 'r'))
+    ins = [open(filename, 'r') for filename in infiles]
     try:
         yield out, ins
     except Exception as ex:
         print(ex)
-        pass
     finally:
         out.close()
         for fh in ins:

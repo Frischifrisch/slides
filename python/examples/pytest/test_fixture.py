@@ -17,7 +17,6 @@ def teardown_function():
 
 def test_one():
     print("    test_one")
-    assert True
     print("    test_one after")
 
 def test_two():
@@ -27,5 +26,4 @@ def test_two():
 
 def test_three():
     print("    test_three")
-    assert True
     print("    test_three after")

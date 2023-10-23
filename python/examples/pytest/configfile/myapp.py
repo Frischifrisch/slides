@@ -13,7 +13,7 @@ def _read_config():
 def app(protocol):
     config = _read_config()
     # ... do stuff based on the config
-    address = protocol + '://' + config['host'] + ':' + config['port']
+    address = f'{protocol}://' + config['host'] + ':' + config['port']
 
     path = os.path.dirname(_get_config_file())
     outfile = os.path.join(path, 'out.txt')

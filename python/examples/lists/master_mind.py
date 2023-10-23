@@ -10,7 +10,7 @@ def main():
     print(f"Hidden numbers: {hidden}")
     while True:
         inp = input("Guess a number: (e.g. 1234) or x to eXit. ")
-        if inp == 'x' or inp == 'X':
+        if inp in ['x', 'X']:
             exit()
         guess = list(inp)
         print(guess)

@@ -34,7 +34,7 @@ while seq:
 
 for codon in amino_acids:
     if len(codon) < 3:
-        print('The remaining bases: {} are not coding for an amino acid'.format(codon))
+        print(f'The remaining bases: {codon} are not coding for an amino acid')
     for aa in codon_table:
         if codon in codon_table[aa]:
             if aa in counter:

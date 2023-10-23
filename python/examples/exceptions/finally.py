@@ -8,7 +8,7 @@ for filename in files:
     try:
         module.read_and_divide(filename)
     except ZeroDivisionError as err:
-        print("Exception {} of type {} in file {}".format(err, type(err).__name__, filename))
+        print(f"Exception {err} of type {type(err).__name__} in file {filename}")
     finally:
-        print("In finally after trying file {}".format(filename))
+        print(f"In finally after trying file {filename}")
     print('')

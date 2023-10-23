@@ -8,27 +8,24 @@ class Date(object):
         self.day   = Day
 
     def __str__(self):
-        return 'Date({}, {}, {})'.format(self.year, self.month, self.day)
+        return f'Date({self.year}, {self.month}, {self.day})'
 
     @classmethod
-    def from_str(class_object, date_str):
+    def from_str(cls, date_str):
         '''Call as
            d = Date.from_str('2013-12-30')
         '''
-        print(f"from_str: {class_object}")
+        print(f"from_str: {cls}")
         year, month, day = map(int, date_str.split('-'))
 
         other_method(43)
 
-        if class_object.is_valid_date(year, month, day):
-            return class_object(year, month, day)
+        if cls.is_valid_date(year, month, day):
+            return cls(year, month, day)
         else:
             raise Exception("Invalid date")
 
     @staticmethod
     def is_valid_date(year, month, day):
-        if 0 <= year <= 3000 and  1 <= month <= 12 and 1 <= day <= 31:
-            return True
-        else:
-            return False
+        return 0 <= year <= 3000 and 1 <= month <= 12 and 1 <= day <= 31
 

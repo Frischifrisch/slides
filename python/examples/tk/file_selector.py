@@ -14,7 +14,7 @@ class Example(tk.Frame):
         self.filename.insert(0, file_path)
 
     def run_process(self):
-        print("Running a process on file {}".format(self.filename.get()))
+        print(f"Running a process on file {self.filename.get()}")
 
     def createWidgets(self):
         self.QUIT = tk.Button(self)

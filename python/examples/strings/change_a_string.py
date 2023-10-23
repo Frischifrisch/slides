@@ -1,5 +1,5 @@
 text = "abcd"
 print(text)      # abcd
 
-text = text[:2] + 'Y' + text[3:]
+text = f'{text[:2]}Y{text[3:]}'
 print(text)      # abYd

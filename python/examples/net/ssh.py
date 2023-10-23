@@ -2,7 +2,7 @@ import subprocess
 import sys
 
 if len(sys.argv) !=2:
-    exit("Usage: " + sys.argv[0] + " hostname")
+    exit(f"Usage: {sys.argv[0]} hostname")
 
 host = sys.argv[1]
 command = "uname -a"
@@ -12,9 +12,8 @@ ssh = subprocess.Popen(["ssh", host, command],
                        stdout=subprocess.PIPE,
                        stderr=subprocess.PIPE)
 result = ssh.stdout.readlines()
-error = ssh.stderr.readlines()
-if error:
+if error := ssh.stderr.readlines():
     for err in error:
-        sys.stderr.write("ERROR: {}\n".format(err))
+        sys.stderr.write(f"ERROR: {err}\n")
 if result:
     print(result)

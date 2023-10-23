@@ -6,21 +6,21 @@ print(ftp.retrlines('LIST'))
 
 print('-------')
 for f in ftp.nlst():
-    print("file: " + f)
+    print(f"file: {f}")
 
 filename = 'ssh.py'
 
-ftp.storlines("STOR " + filename, open(filename))
+ftp.storlines(f"STOR {filename}", open(filename))
 
 print('-------')
 for f in ftp.nlst():
-    print("file: " + f)
+    print(f"file: {f}")
 
 ftp.delete(filename)
 
 print('-------')
 for f in ftp.nlst():
-    print("file: " + f)
+    print(f"file: {f}")
 
 
  

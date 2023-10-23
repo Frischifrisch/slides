@@ -10,21 +10,17 @@ content
 After
 '''
 
-match = re.search(r'<div>.*</div>', line)
-if match:
+if match := re.search(r'<div>.*</div>', line):
     print(f"line '{match.group(0)}'");
 
-match = re.search(r'<div>.*</div>', text)
-if match:
+if match := re.search(r'<div>.*</div>', text):
     print(f"text '{match.group(0)}'");
 
 print('-' * 10)
 
-match = re.search(r'<div>.*</div>', line, re.DOTALL)
-if match:
+if match := re.search(r'<div>.*</div>', line, re.DOTALL):
     print(f"line '{match.group(0)}'");
 
-match = re.search(r'<div>.*</div>', text, re.DOTALL)
-if match:
+if match := re.search(r'<div>.*</div>', text, re.DOTALL):
     print(f"text '{match.group(0)}'");
 

@@ -6,6 +6,6 @@ def main():
         name = raw_input('Your name: ')
     else:
         name = input('Your name: ')
-    print('Hello ' + name + ', how are you?')
+    print(f'Hello {name}, how are you?')
 
 main()

@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 
 dbname = 'test.db'
 
-engine = create_engine('sqlite:///' + dbname)
+engine = create_engine(f'sqlite:///{dbname}')
 
 conn = engine.connect()
 results = conn.execute('SELECT balance, name FROM person WHERE id < :id', id = 3)

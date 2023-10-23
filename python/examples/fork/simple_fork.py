@@ -1,17 +1,19 @@
 import os
 import time
 
-print('{} - start running'.format(os.getpid()))
+print(f'{os.getpid()} - start running')
 
 pid = os.fork()
 if not pid:
-    print('{} - in child. Parent is {}'.format(os.getpid(), os.getppid()))
+    print(f'{os.getpid()} - in child. Parent is {os.getppid()}')
     time.sleep(1)
     exit(3)
 
-print('{} - in parent (child pid is {})'.format(os.getpid(), pid))
+print(f'{os.getpid()} - in parent (child pid is {pid})')
 
 child_pid, exit_code = os.wait()
-print('{} - Child with pid {} exited. Exit code {}'.format(os.getpid(), child_pid, exit_code))
-print('Real exit code {}'.format(int(exit_code/256)))  # The upper byte
-print('Also known as {}'.format(exit_code >> 8))  # Right shift 8 bits
+print(
+    f'{os.getpid()} - Child with pid {child_pid} exited. Exit code {exit_code}'
+)
+print(f'Real exit code {int(exit_code / 256)}')
+print(f'Also known as {exit_code >> 8}')

@@ -1,10 +1,7 @@
 import random
 
 def f():
-    n = 0
-    for i in range(30):
-        n += random.random()
-    return n
+    return sum(random.random() for _ in range(30))
 
 def g():
     return random.random() * 30
@@ -13,9 +10,7 @@ def g():
 def main(n):
     text = get_str(n)
 
-    #print(str)
-    text_sorted = sort(text)
-    return text_sorted
+    return sort(text)
 
 def sort(s):
     chars = list(s)
@@ -28,10 +23,7 @@ def sort(s):
     return ''.join(chars)
 
 def get_str(n):
-    text = ''
-    for i in range(1, n):
-        text += chr(65 + random.randrange(0, 26))
-    return text
+    return ''.join(chr(65 + random.randrange(0, 26)) for _ in range(1, n))
 
 def swap(lst, loc):
     if lst[loc] > lst[loc + 1]:

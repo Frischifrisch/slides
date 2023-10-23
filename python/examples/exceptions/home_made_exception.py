@@ -9,7 +9,7 @@ def main():
         some()
     except Exception as err:
         print(err)
-        print("Type: " + type(err).__name__)
+        print(f"Type: {type(err).__name__}")
 
     try:
         some()

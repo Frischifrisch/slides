@@ -13,10 +13,7 @@ def hello_world(environ, start_response):
     start_response(status, headers)
 
     form = cgi.FieldStorage(fp=environ['wsgi.input'], environ=environ)
-    html = ''
-    for f in form:
-       html += f + '==' + form[f].value + '<br>'
-
+    html = ''.join(f'{f}=={form[f].value}<br>' for f in form)
     if not html:
         html = """
 <a href="?fname=Foo&lname=Bar">click</a>

@@ -3,7 +3,7 @@ user = {
     'lname': 'Bar',
 }
 
-for k in user.keys():
+for k in user:
     user['email'] = 'foo@bar.com'
     print(k)
 

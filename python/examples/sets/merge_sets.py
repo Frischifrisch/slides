@@ -1,5 +1,5 @@
-objects  = set(['Mars', 'Jupiter', 'Saturn'])
-internal = set(['Mercury', 'Venus', 'Earth', 'Mars'])
+objects = {'Mars', 'Jupiter', 'Saturn'}
+internal = {'Mercury', 'Venus', 'Earth', 'Mars'}
 
 objects.update(internal)
 print(objects)

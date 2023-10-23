@@ -10,4 +10,4 @@ print("{:G}".format(x))   #  generic:      412.346
 print("{:n}".format(x))   #  number:       412.346
 
 
-print("{}".format(x))     # defaults to g  412.345678901
+print(f"{x}")

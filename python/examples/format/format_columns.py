@@ -7,7 +7,7 @@ data = [
 ]
 
 for entry in data:
-    print("{} {}".format(entry[0], entry[1]))
+    print(f"{entry[0]} {entry[1]}")
 
 print('-' * 16)
 

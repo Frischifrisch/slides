@@ -69,7 +69,7 @@ def main():
         if key == -1:
             continue
         #print(f'key {key} pressed')
-        if key == ord('q') or key == ord('x'):
+        if key in [ord('q'), ord('x')]:
             cv.destroyAllWindows()
             break
         if key == ord('n'):

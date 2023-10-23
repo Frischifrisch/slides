@@ -11,8 +11,7 @@ def run_process(command):
     proc.communicate()
     print("After communicate")
 
-    exit_code = proc.returncode
-    return exit_code
+    return proc.returncode
 
 print("Before run_process", flush=True)
 exit_code = run_process(['python', 'process.py', '5', '0'])

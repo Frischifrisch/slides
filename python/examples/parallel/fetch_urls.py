@@ -44,7 +44,7 @@ def main():
             "err": err,
         })
     end = time.time()
-    print("Elapsed time: {} for {} pages.".format(end-start, len(urls)))
+    print(f"Elapsed time: {end - start} for {len(urls)} pages.")
     print(titles)
 
 

@@ -9,9 +9,8 @@ ssh = subprocess.Popen([r"c:\Users\foobar\download\plink.exe", "-ssh",
                        stdout=subprocess.PIPE,
                        stderr=subprocess.PIPE)
 result = ssh.stdout.readlines()
-error = ssh.stderr.readlines()
-if error:
+if error := ssh.stderr.readlines():
     for err in error:
-        sys.stderr.write("ERROR: {}\n".format(err))
+        sys.stderr.write(f"ERROR: {err}\n")
 if result:
     print(result)

@@ -11,8 +11,7 @@ def get_args():
     parser.add_argument('--dir',             help="Directory where to create the files", default=".")
     parser.add_argument('--files', type=int, help="Number of files to create", default=1)
     parser.add_argument('--size',  type=int, help="Size of files",             default=10)
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 def main():
     args = get_args()
@@ -25,7 +24,7 @@ def main():
         #print(len(all_chars))
 
         #print(all_chars)
-        filename = os.path.join(args.dir, str(ix) + '.txt')
+        filename = os.path.join(args.dir, f'{str(ix)}.txt')
         with open(filename, 'w') as fh:
             fh.write(''.join(all_chars))
 
@@ -43,7 +42,7 @@ def old_main():
     all_chars = chars * max_width
 
     with open(filename, 'w') as fh:
-        for i in range(row_count):
+        for _ in range(row_count):
             width = random.randrange(min_width, max_width+1)
             row = ''.join(random.sample(all_chars, width))
             fh.write(row + "\n")

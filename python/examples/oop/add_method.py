@@ -6,7 +6,7 @@ y = Person('Jane')
 print(y.name)           # Jane
 
 def show(some_instance):
-    print("Hello " + some_instance.name)
+    print(f"Hello {some_instance.name}")
 
 Person.show = show
 y.show()                # Hello Jane

@@ -1,6 +1,6 @@
 def f(a, b = None):
-    if b == None:
-         b = []
+    if b is None:
+        b = []
     b.append(a)
     return b
 

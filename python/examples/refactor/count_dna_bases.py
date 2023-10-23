@@ -12,9 +12,7 @@ def getinput():
 
     if file:
         with open(file) as f:
-            for line in f:
-                string.append(line.strip('\n'))
-
+            string.extend(line.strip('\n') for line in f)
         try:
             string = ''.join(string)
         except Exception:
@@ -66,7 +64,7 @@ def count(items):
 
     diction = {}
     for item in items:
-        if item in diction.keys():
+        if item in diction:
             diction[item] += 1
         else:
             diction[item] = 1

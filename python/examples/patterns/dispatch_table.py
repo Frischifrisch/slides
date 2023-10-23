@@ -1,9 +1,6 @@
 
 
-calls = []
-calls.append( lambda x: x+1 )
-calls.append( lambda x: x*2 )
-
+calls = [lambda x: x+1, lambda x: x*2]
 others = [
    lambda x: x-1,
    lambda x: 0

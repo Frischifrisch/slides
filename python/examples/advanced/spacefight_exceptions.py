@@ -6,16 +6,16 @@ class SpaceShipError(Exception):
 
 class NumberTooBigError(SpaceShipError):
     def __str__(self):
-        return "Number {} is too big".format(self.inp)
+        return f"Number {self.inp} is too big"
 
 class NumberTooSmallError(SpaceShipError):
     def __str__(self):
-        return "Number {} is too small".format(self.inp)
+        return f"Number {self.inp} is too small"
 
 
 class NotANumberError(SpaceShipError):
     def __str__(self):
-        return "Not a Number {}".format(self.inp)
+        return f"Not a Number {self.inp}"
 
 
 class Game:
@@ -36,7 +36,7 @@ class Game:
             return
 
         if self.is_debug:
-            print("Hidden number {}. Your guess is {}".format(self.number, num))
+            print(f"Hidden number {self.number}. Your guess is {num}")
 
         try:
             num =  int(num)

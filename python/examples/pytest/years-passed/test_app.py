@@ -4,11 +4,15 @@ import pytest
 
 def test_app(monkeypatch):
     mydt = datetime.date
-    class MyDate():
+
+
+    class MyDate:
         def today():
             return mydt(2021, 2, 15)
-        def fromisoformat(date_str):
-            return mydt.fromisoformat(date_str)
+
+        def fromisoformat(self):
+            return mydt.fromisoformat(self)
+
 
     monkeypatch.setattr(app.datetime, 'date', MyDate)
 

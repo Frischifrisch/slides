@@ -17,11 +17,11 @@ def test_user(web, uid):
     assert uid == rv.data.decode('utf-8')
 
 def test_user_fail(web):
-    rv = web.get(f'/user/')
+    rv = web.get('/user/')
     assert rv.status == '404 NOT FOUND'
 
 def test_user_fail(web):
-    rv = web.get(f'/user')
+    rv = web.get('/user')
     assert rv.status == '404 NOT FOUND'
 
 

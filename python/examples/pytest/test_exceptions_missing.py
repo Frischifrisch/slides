@@ -1,9 +1,7 @@
 import pytest
 
 def divide(a, b):
-    if b == 0:
-        return None
-    return a / b
+    return None if b == 0 else a / b
 
 def test_zero_division():
     with pytest.raises(ValueError) as e:

@@ -12,8 +12,8 @@ a = {"name": "Foo"}
 b = a
 c = {"name": "Foo"}
 
-print(a == b)  # True
-print(a == c)  # True
-print(a is b)  # True
-print(a is c)  # False
+print(True)
+print(b == c)
+print(b is b)
+print(b is c)
 

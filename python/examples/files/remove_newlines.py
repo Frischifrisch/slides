@@ -1,7 +1,5 @@
 import sys
 filename = sys.argv[0]
 with open(filename) as fh:
-    lines = []
-    for line in fh:
-        lines.append(line.rstrip("\n"))
+    lines = [line.rstrip("\n") for line in fh]
     print(lines)

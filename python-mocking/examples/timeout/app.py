@@ -21,6 +21,4 @@ class MySystem():
         return self.logged_in and self.last_seen + TIMEOUT > time.time()
 
     def verify_user(self, name, password):
-        if name == 'foo' and password == 'secret':
-            return True
-        return False
+        return name == 'foo' and password == 'secret'

@@ -5,14 +5,14 @@ def mysum(op, *numbers):
     elif op == '*':
         total = 1
     else:
-        raise Exception('invalid operator {}'.format(op))
+        raise Exception(f'invalid operator {op}')
 
     for s in numbers:
-        if op == '+':
-            total += s
-        elif op == '*':
+        if op == '*':
             total *= s
 
+        elif op == '+':
+            total += s
     return total
 
 print(mysum('+', 1))

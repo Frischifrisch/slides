@@ -14,7 +14,7 @@ c = ThreadedCount()
 a.start()
 b.start()
 c.start()
-print('main - Running {} threads'.format(threading.active_count()))
+print(f'main - Running {threading.active_count()} threads')
 
 a.join()
 b.join()

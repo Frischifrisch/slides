@@ -1,10 +1,7 @@
 import sys
 import pandas as pd
 
-filename = "survey_results_public.csv"
-if len(sys.argv) == 2:
-    filename = sys.argv[1]
-
+filename = sys.argv[1] if len(sys.argv) == 2 else "survey_results_public.csv"
 # Load only data from a specific country.
 
 country_name = 'Israel'

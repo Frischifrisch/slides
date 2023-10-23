@@ -1,5 +1,4 @@
 def test_one():
-    assert True
     print('one')
 
 def test_two():
@@ -7,7 +6,6 @@ def test_two():
     print('two')
 
 def test_three():
-    assert True
     print('three')
 
 def test_four():
@@ -15,6 +13,5 @@ def test_four():
     print('four')
 
 def test_five():
-    assert True
     print('five')
 

@@ -13,10 +13,10 @@ with open(file_a) as fha:
             if line_b is None:
                 line_b = fhb.readline()
 
-            if line_a == '' and line_b == '':
-                break
-
             if line_a == '':
+                if line_b == '':
+                    break
+
                 print(line_b, end='')
                 line_b = None
                 continue

@@ -19,7 +19,7 @@ def check_rows(filename):
         print(f"Most common number of cells is {cell_counts[0]} with {widthes[ cell_counts[0] ]} rows")
         for count in cell_counts[1:]:
             print(f"  Cells: {count}")
-            print(f"  Rows:")
+            print("  Rows:")
             for row, cells in enumerate(rows):
                 if cells == count:
                     print(f"    {row}")

@@ -14,7 +14,7 @@ def runchap(chapter):
     quizzes = chapter["quiz"]
     counter=0
     for ix, quiz in enumerate(quizzes):
-        print("\nQuestion {}".format(ix+1))
+        print(f"\nQuestion {ix + 1}")
         inp = input(quiz["q"])
         answer = quiz["a"]
         ok = False
@@ -30,7 +30,7 @@ def runchap(chapter):
         else:
             print(random.choice(data['bad']))
 
-    print("You gave " + str(counter) + " correct answers out of 3")
+    print(f"You gave {str(counter)} correct answers out of 3")
 
 def main():
     while True:
@@ -43,7 +43,7 @@ def main():
         if chapter == "x":
             break
         elif chapter in list(map(str, range(1, len(chapters)+1))):
-            print("Selected chapter: " + chapter)
+            print(f"Selected chapter: {chapter}")
             runchap(chapters[int(chapter)-1])
             continue
         else:

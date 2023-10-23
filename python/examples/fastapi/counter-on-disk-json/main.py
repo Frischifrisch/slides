@@ -21,8 +21,7 @@ async def count(name):
 
 @app.get("/")
 async def main():
-    counters = load_counters()
-    if counters:
+    if counters := load_counters():
         html = '<table>\n'
         for name in sorted(counters.keys()):
             html += f'<tr><td><a href="/{name}">{name}</a></td><td>{counters[name]}</td></tr>\n'

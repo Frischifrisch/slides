@@ -1,23 +1,16 @@
 def stats(*numbers):
    total = 0
 
-   average = None  # there might be better solutions here!
    minx = None
    maxx = None
 
    for val in numbers:
-       total += val
-       if minx == None:
-           minx = maxx = val
-       if minx > val:
-           minx = val
-       if maxx < val:
-           maxx = val
-
-   if len(numbers):
-       average = total / len(numbers)
-
-
+      total += val
+      if minx is None:
+         minx = maxx = val
+      minx = min(minx, val)
+      maxx = max(maxx, val)
+   average = total / len(numbers) if len(numbers) else None
    return total, average, minx, maxx
 
 

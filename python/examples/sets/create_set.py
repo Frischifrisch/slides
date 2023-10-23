@@ -1,4 +1,4 @@
-things = {'table', 'chair', 'door', 'chair'}
+things = {'table', 'door', 'chair'}
 print(things)
 print(type(things))
 

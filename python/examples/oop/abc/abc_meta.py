@@ -12,11 +12,11 @@ class MyABC(type):
             #   '__metaclass__': <class '__main__.MyABC'>
             # })
 #        attr = dict(args)
-        if not '__metaclass__' in args[2]:
+        if '__metaclass__' not in args[2]:
             return
 
-        if not '__required_methods__' in args[2]:
-             raise Exception("No __required_methods__")
+        if '__required_methods__' not in args[2]:
+            raise Exception("No __required_methods__")
         name = args[0]
         required_methods = set(args[2]['__required_methods__'])
         def my_init(self, *args, **kwargs):
@@ -25,8 +25,12 @@ class MyABC(type):
                     .format(name))
 
             #print("my_init")
-            methods = set([ x[0] for x in
-                inspect.getmembers(self.__class__, predicate=inspect.ismethod)])
+            methods = {
+                x[0]
+                for x in inspect.getmembers(
+                    self.__class__, predicate=inspect.ismethod
+                )
+            }
             if not required_methods.issubset( methods ):
                 missing = required_methods - methods
                 raise Exception("Requried method '{}' is not implemented in '{}'"

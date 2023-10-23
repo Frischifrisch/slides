@@ -10,5 +10,5 @@ def count(url, word):
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
-        exit("{} URL string".format(sys.argv[0]))
+        exit(f"{sys.argv[0]} URL string")
     print(count(sys.argv[1], sys.argv[2]))

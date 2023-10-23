@@ -19,9 +19,8 @@ class Example(tk.Frame):
         self.QUIT.pack({"side": "left"})
 
 
-        self.vars = []
         self.cbs = []
-        self.vars.append(tk.IntVar())
+        self.vars = [tk.IntVar()]
         cb = tk.Checkbutton(text="Blue", variable=self.vars[-1])
         cb.pack({"side": "left"})
         self.cbs.append(cb)

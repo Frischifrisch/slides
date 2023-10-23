@@ -11,9 +11,12 @@ def lambda_handler(event, context):
             'headers': { 'Content-Type': 'application/json' },
             'body': json.dumps({ 'error': 'Missing queryStringParameters' })
         }
-        
-    
-    if event['queryStringParameters'] == None or 'url' not in event['queryStringParameters']:
+
+
+    if (
+        event['queryStringParameters'] is None
+        or 'url' not in event['queryStringParameters']
+    ):
         return {
             'statusCode': 400,
             'headers': { 'Content-Type': 'application/json' },

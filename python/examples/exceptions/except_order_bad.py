@@ -9,9 +9,6 @@ for filename in files:
     except Exception as err:
         print(f"General error {err}")
         print(f"Error class: {err.__class__.__name__}")
-    except ZeroDivisionError:
-        print("ZeroDivisionError")
-        print(f"Cannot divide by 0 in file '{filename}'")
     print('')
 
 # before one.txt

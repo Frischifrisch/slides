@@ -17,10 +17,10 @@ class Person(object):
             raise Exception("Incompatible couple")
 
         DNA_childPosible_sequence = DNA_father + DNA_mother
-        DNA_child = ""
-        for i in range(len(self.gene())):
-            DNA_child += random.choice([DNA_father[i], DNA_mother[i]])
-
+        DNA_child = "".join(
+            random.choice([DNA_father[i], DNA_mother[i]])
+            for i in range(len(self.gene()))
+        )
         return Person(DNA_child)
 
 

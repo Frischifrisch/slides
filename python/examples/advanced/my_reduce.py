@@ -1,5 +1,5 @@
 def my_reduce(f, *args):
-    if len(args) == 0:
+    if not args:
         return None
     result = args[0]
     for i in range(1, len(args)):

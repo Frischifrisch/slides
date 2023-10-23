@@ -5,9 +5,9 @@ from pymongo.errors import ConnectionFailure
 def main():
 
     try:
-       c = Connection(host="localhost", port=27017)
+        c = Connection(host="localhost", port=27017)
     except ConnectionFailure as e:
-        sys.stderr.write("Could not connect to MongoDB: {}\n".format(e))
+        sys.stderr.write(f"Could not connect to MongoDB: {e}\n")
         exit()
 
     db = c["users"]

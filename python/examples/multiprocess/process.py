@@ -2,14 +2,14 @@ import multiprocessing as mp
 import os
 
 def func():
-    print("proc pid: {} parent pid: {}".format(os.getpid(), os.getppid()))
+    print(f"proc pid: {os.getpid()} parent pid: {os.getppid()}")
 
 def main():
-    print("main pid: {} before".format(os.getpid()))
+    print(f"main pid: {os.getpid()} before")
     proc = mp.Process(target=func)
     proc.start()
     proc.join()
-    print("main pid: {} after".format(os.getpid()))
+    print(f"main pid: {os.getpid()} after")
 
 
 if __name__ == '__main__':

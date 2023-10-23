@@ -13,8 +13,7 @@ def main():
 
 @app.route("/echo", methods=['POST'])
 def echo():
-    user_text = request.form.get('text', '')
-    if user_text:
-        return "You said: " + user_text
+    if user_text := request.form.get('text', ''):
+        return f"You said: {user_text}"
     return "Nothing to say?"
 

@@ -10,7 +10,9 @@ config = {
     "server": "mongo",
 }
 
-connector = "mongodb://{}:{}@{}".format(config["username"], config["password"], config["server"])
+connector = (
+    f'mongodb://{config["username"]}:{config["password"]}@{config["server"]}'
+)
 client = pymongo.MongoClient(connector)
 db = client["demo"]
 
@@ -53,8 +55,7 @@ def not_found(error):
 @app.route("/get", methods=['POST'])
 def get():
     name = request.form['name']
-    doc = db.people.find_one({'name' : {'$regex': name}})
-    if doc:
+    if doc := db.people.find_one({'name': {'$regex': name}}):
         app.logger.info(doc)
         return redirect(url_for('person', idnum=doc["id"]) )
     return render_template('main.html', error="Could not find that person")

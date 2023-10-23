@@ -13,7 +13,7 @@ class ThreadedJob(threading.Thread):
         threading.Thread.__init__(self)
     def run(self):
         thread = threading.current_thread()
-        print("Start thread {}".format(thread.name))
+        print(f"Start thread {thread.name}")
         try:
             for i in range(10):
                 print(i)
@@ -85,7 +85,7 @@ class RunnerApp(tk.Frame):
         self.master.after(100, self.process_queue)
 
     def process_queue(self):
-        print("process " + str(time.time()))
+        print(f"process {str(time.time())}")
         if not self.job.is_alive():
             self.job.join()
             self.job = None

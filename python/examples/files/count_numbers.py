@@ -15,4 +15,4 @@ with open(filename) as fh:
             counter[c] += 1
 
 for i in range(10):
-    print("{} {}".format(i, counter[i]))
+    print(f"{i} {counter[i]}")

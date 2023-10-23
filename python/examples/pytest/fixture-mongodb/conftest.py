@@ -7,7 +7,7 @@ from app.common import get_mongo
 
 @pytest.fixture(autouse = True)
 def configuration():
-    dbname = 'test_app_' + str(int(time.time()))
+    dbname = f'test_app_{int(time.time())}'
     os.environ['APP_DB_NAME'] = dbname
 
     yield

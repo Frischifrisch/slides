@@ -7,9 +7,7 @@ import scipy.io
 import pickle
 
 def main():
-    size = (2, 4)
-    if len(sys.argv) == 3:
-        size = (int(sys.argv[1]), int(sys.argv[2]))
+    size = (int(sys.argv[1]), int(sys.argv[2])) if len(sys.argv) == 3 else (2, 4)
     print(f"size: {size}\n")
     original = np.random.random(size)
     #print(original)

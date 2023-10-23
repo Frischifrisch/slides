@@ -2,7 +2,7 @@ import os
 import sys
 
 if len(sys.argv) != 2:
-    exit("Usage: {} directory".format(sys.argv[0]))
+    exit(f"Usage: {sys.argv[0]} directory")
 
 path = sys.argv[1]
 files = os.listdir(path)

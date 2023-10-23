@@ -8,15 +8,15 @@ file = sys.argv[1]
 
 
 def start_element(name, attrs):
-    print('Start element: {} {}'.format(name, attrs))
+    print(f'Start element: {name} {attrs}')
 
 
 def end_element(name):
-    print('End element: {}'.format(name))
+    print(f'End element: {name}')
 
 
 def char_data(data):
-    print('Character data: {}'.format(repr(data)))
+    print(f'Character data: {repr(data)}')
 
 
 p = xml.parsers.expat.ParserCreate()

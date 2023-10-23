@@ -6,8 +6,7 @@ app.title('List box')
 
 def clicked():
     print("clicked")
-    selected = box.curselection()  # returns a tuple
-    if selected:
+    if selected := box.curselection():
         first = selected[0]
         color = box.get(first)
         print(color)

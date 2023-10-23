@@ -2,14 +2,13 @@ import time
 
 
 def create_pair():
-    a = {'name' : 'Foo'}
     b = {'name' : 'Bar'}
-    a['pair'] = b
+    a = {'name': 'Foo', 'pair': b}
     b['pair'] = a
     #print(a)
 
 
-for i in range(1, 30000000):
+for _ in range(1, 30000000):
     create_pair()
 
 print("let's sleep now a bit")

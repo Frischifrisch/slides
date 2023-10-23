@@ -9,7 +9,7 @@ def f(x):
    count += 1
    #print("Input {} in process {}".format(x, os.getpid()))
    logger = logging.getLogger("app")
-   logger.info("f({}) count {} in PID {}".format(x, count, os.getpid()))
+   logger.info(f"f({x}) count {count} in PID {os.getpid()}")
    return x*x
 
 
@@ -27,7 +27,7 @@ def setup_logger():
    ch.setLevel(level)
    ch.setFormatter(formatter)
    logger.addHandler(ch)
-   logger.info("Setup logger in PID {}".format(os.getpid()))
+   logger.info(f"Setup logger in PID {os.getpid()}")
 
 def main():
    logger = logging.getLogger('app')

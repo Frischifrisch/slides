@@ -1,7 +1,10 @@
 import json
 
 def lambda_handler(event, context):
-    if event['queryStringParameters'] == None or 'name' not in event['queryStringParameters']:
+    if (
+        event['queryStringParameters'] is None
+        or 'name' not in event['queryStringParameters']
+    ):
         return {
             'statusCode': 400,
             'headers': { 'Content-Type': 'application/json' },
@@ -13,6 +16,6 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 200,
-        'headers': { 'Content-Type': 'application/json' },
-        'body': json.dumps({ 'message': 'Hello {}!'.format(name) })
+        'headers': {'Content-Type': 'application/json'},
+        'body': json.dumps({'message': f'Hello {name}!'}),
     }

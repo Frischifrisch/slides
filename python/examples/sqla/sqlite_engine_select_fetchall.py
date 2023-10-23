@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 
 dbname = 'test.db'
 
-engine = create_engine('sqlite:///' + dbname)
+engine = create_engine(f'sqlite:///{dbname}')
 result = engine.execute('SELECT * FROM person WHERE id >= :id', id=3)
 
 rows = result.fetchall()

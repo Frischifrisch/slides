@@ -22,11 +22,10 @@ def gfibonacci(size = 2):
             values = values[1:]
 
 def pascal():
-    values = [1]
-    while True:
-        yield values
-        new = [1]
-        for i in range(0, len(values)-1):
-            new.append(values[i] + values[i+1])
-        new.append(1)
-        values = new
+   values = [1]
+   while True:
+      yield values
+      new = [1]
+      new.extend(values[i] + values[i+1] for i in range(0, len(values)-1))
+      new.append(1)
+      values = new

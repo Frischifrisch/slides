@@ -2,7 +2,7 @@ import os
 import sys
 
 if len(sys.argv) != 2:
-    exit("Usage: {} PATH_TO_DIRECTORY".format(sys.argv[0]))
+    exit(f"Usage: {sys.argv[0]} PATH_TO_DIRECTORY")
 
 root = sys.argv[1]
 

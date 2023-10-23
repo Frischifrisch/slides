@@ -1,7 +1,7 @@
 names = ['Foo', 'Bar', 'Baz']
 
 ok = False
-for i in range(3):
+for _ in range(3):
     name = input('Your name please: ')
     if name in names:
         ok = True

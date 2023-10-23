@@ -5,7 +5,7 @@ from sqlalchemy.engine import reflection
 
 dbname = 'test.db'
 if not os.path.exists(dbname):
-    exit("Database file '{}' could not be found".format(dbname))
+    exit(f"Database file '{dbname}' could not be found")
 
 engine = create_engine('sqlite:///test.db')
 # inspector = inspect(engine)

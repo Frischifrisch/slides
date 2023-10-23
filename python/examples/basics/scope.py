@@ -8,12 +8,11 @@ def main():
     print('b:', b)    # b: 17
     print('c:', c)    # c: 42
 
-    if True:
-        print('a:', a)    # a: 23
-        print('b:', b)    # b: 17
-        b = 99
-        print('b:', b)    # b: 99
-        print('c:', c)    # c: 42
+    print('a:', a)    # a: 23
+    print('b:', b)    # b: 17
+    b = 99
+    print('b:', b)    # b: 99
+    print('c:', c)    # c: 42
 
     print('a:', a)    # a: 23
     print('b:', b)    # b: 99

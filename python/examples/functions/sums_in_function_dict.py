@@ -5,14 +5,12 @@ data = {
 }
 
 def calc(numbers):
-    total  = 0
-    for v in numbers:
-        total += v
+    total = sum(numbers)
     return total, total / len(numbers)
 
 total = {}
 avg   = {}
 for name, numbers in data.items():
-   total[name], avg[name] = calc(numbers)
-   print("sum of {}: {} average of {}: {}".format(name, total[name], name, avg[name]))
+    total[name], avg[name] = calc(numbers)
+    print(f"sum of {name}: {total[name]} average of {name}: {avg[name]}")
 

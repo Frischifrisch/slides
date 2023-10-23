@@ -14,7 +14,7 @@ def main():
         else:
             print("This will run if there was no exception at all")
         finally:
-            print("Always executes. {}/{} ended.".format(cnt, num))
+            print(f"Always executes. {cnt}/{num} ended.")
 
     print("done")
 

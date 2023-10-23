@@ -2,14 +2,10 @@ import timeit
 from functools import reduce
 
 def add_in_loop(num):
-    total = 0
-    for ix in range(num+1):
-        total += ix
-    return total
+    return sum(range(num+1))
 
 def add_with_reduce(num):
-    total = reduce(lambda x, y: x + y, range(num+1))
-    return total
+    return reduce(lambda x, y: x + y, range(num+1))
 
 
 def main():

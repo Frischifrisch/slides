@@ -7,8 +7,7 @@ strings = (
 )
 
 for text in strings:
-    match = re.search(r'ax{4}', text)
-    if match:
+    if match := re.search(r'ax{4}', text):
         print(f"Match {text}")
         print(match.group(0))
     else:

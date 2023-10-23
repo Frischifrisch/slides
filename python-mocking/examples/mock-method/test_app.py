@@ -7,7 +7,7 @@ def test_app(monkeypatch):
     rv = aut.get('/')
     assert rv.status == '200 OK'
     assert '<form' in str(rv.data)
-    assert not 'Welcome back!' in str(rv.data)
+    assert 'Welcome back!' not in str(rv.data)
 
     email = 'foo@bar.com'
 
@@ -24,8 +24,7 @@ def test_app(monkeypatch):
     assert rv.status == '200 OK'
     assert 'FAILED' in str(rv.data)
 
-    match = re.search(r'/(\d\.\d+)"', messages[0]['html'])
-    if match:
+    if match := re.search(r'/(\d\.\d+)"', messages[0]['html']):
         code = match.group(1)
     print(code)
 

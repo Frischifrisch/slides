@@ -2,6 +2,5 @@ import re
 
 text = "This is <a string> with some <sections> marks."
 
-m = re.search(r'<[^>]*>', text)
-if m:
+if m := re.search(r'<[^>]*>', text):
     print(m.group(0))

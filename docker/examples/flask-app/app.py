@@ -12,11 +12,13 @@ def main_get():
         conn = sqlite3.connect(dbfile)
         c = conn.cursor()
         sql = '''SELECT id, title FROM tasks'''
-        for task in c.execute(sql):
-            tasks.append({
-                "id"    : task[0],
-                "title" : task[1],
-            })
+        tasks.extend(
+            {
+                "id": task[0],
+                "title": task[1],
+            }
+            for task in c.execute(sql)
+        )
         conn.close()
     except Exception as err:
         pass
@@ -25,8 +27,7 @@ def main_get():
 
 @app.route("/", methods=['POST'])
 def main_post():
-    title = request.form['title']
-    if title:
+    if title := request.form['title']:
         try:
             conn = sqlite3.connect(dbfile)
             c = conn.cursor()

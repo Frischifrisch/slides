@@ -1,12 +1,7 @@
 from collections import OrderedDict
 import json
 
-d = {}
-d['a'] = 1
-d['b'] = 2
-d['c'] = 3
-d['d'] = 4
-
+d = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 planned_order = ('b', 'c', 'd', 'a')
 e = OrderedDict(sorted(d.items(), key=lambda x: planned_order.index(x[0])))
 print(e)

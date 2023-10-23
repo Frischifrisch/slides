@@ -5,10 +5,8 @@ import time
 from mymodule import calc
 
 def child(start, end):
-    results = {}
-    for ix in range(start, end):
-        results[ix] = calc(ix)
-    filename = str(os.getpid()) + '.json'
+    results = {ix: calc(ix) for ix in range(start, end)}
+    filename = f'{os.getpid()}.json'
     with open(filename, 'w') as fh:
         json.dump(results, fh)
     exit()
@@ -24,15 +22,14 @@ def main(total_number, parallels):
         if cnt == parallels - 1:
             end = total_number + 1
         print(f"do: {start}-{end}")
-        pid = os.fork()
-        if pid:
+        if pid := os.fork():
             processes.append(pid) # parent
         else:
             child(start, end)
-    for _ in range(len(processes)):
+    for _ in processes:
         pid, exit_code = os.wait()
         #print(pid, exit_code)
-        filename = str(pid) + '.json'
+        filename = f'{str(pid)}.json'
         with open(filename) as fh:
             res = json.load(fh)
             print(f"{pid}: {res}")
@@ -50,7 +47,7 @@ if __name__ == '__main__':
     end = time.time()
     total = sum(results.values())
     print(f"Total: {total}")
-    print("Elapsed time: {}".format(end-start))
+    print(f"Elapsed time: {end - start}")
 
 
 

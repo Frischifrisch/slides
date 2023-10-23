@@ -11,7 +11,7 @@ logger = logging.getLogger('demo')
 logger.setLevel(logging.INFO)
 
 dbname = 'imdb.db'
-engine = create_engine('sqlite:///' + dbname)
+engine = create_engine(f'sqlite:///{dbname}')
 
 Base.metadata.bind = engine
 

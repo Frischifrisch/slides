@@ -1,5 +1,3 @@
 
-ix = 3
-while ix < 25:
+for ix in range(3, 25, 4):
     print(ix)
-    ix += 4

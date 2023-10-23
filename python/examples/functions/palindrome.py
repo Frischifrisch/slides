@@ -1,15 +1,10 @@
 def is_palindrome(s):
     if s == '':
         return True
-    if s[0] == s[-1]:
-        return is_palindrome(s[1:-1])
-    return False
+    return is_palindrome(s[1:-1]) if s[0] == s[-1] else False
 
 def iter_palindrome(s):
-    for i in range(0, int(len(s) / 2)):
-        if s[i] != s[-(i+1)]:
-            return False
-    return True
+    return all(s[i] == s[-(i+1)] for i in range(0, len(s) // 2))
 
 print(is_palindrome(''))      # True
 print(is_palindrome('a'))     # True

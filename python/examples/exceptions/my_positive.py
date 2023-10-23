@@ -4,7 +4,7 @@ class MyValueError(ValueError):
 
 class MyFloatError(MyValueError):
    def __str__(self):
-       return "The given parameter {} is a float and not an int.".format(self.value)
+      return f"The given parameter {self.value} is a float and not an int."
 
 class MyTypeError(MyValueError):
    def __init__(self, val, val_type):
@@ -12,11 +12,11 @@ class MyTypeError(MyValueError):
        super(MyTypeError, self).__init__(val)
 
    def __str__(self):
-       return "The given parameter {} is of type {} and not int.".format(self.value, self.value_type)
+      return f"The given parameter {self.value} is of type {self.value_type} and not int."
 
 class MyNegativeError(MyValueError):
    def __str__(self):
-       return "The given number {} is not positive.".format(self.value)
+      return f"The given number {self.value} is not positive."
 
 def positive(num):
    if type(num).__name__ == 'float':
@@ -32,9 +32,9 @@ for val in [14, 24.3, "hi", -10]:
    print(val)
    print(type(val).__name__)
    try:
-       positive(val)
+      positive(val)
    except MyValueError as ex:
-       print("Exception: {}".format(ex))
-       print("Exception type {}".format(type(ex).__name__))
+      print(f"Exception: {ex}")
+      print(f"Exception type {type(ex).__name__}")
 
    # Exception, ValueError

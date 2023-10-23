@@ -15,9 +15,8 @@ class SectionReader():
             if not line:
                 if self.section:
                     return self.section
-                else:
-                    self.fh.close()
-                    raise StopIteration
+                self.fh.close()
+                raise StopIteration
             if re.search(r'\A\s*\Z', line):
                 if self.section:
                     return self.section

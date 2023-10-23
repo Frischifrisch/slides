@@ -20,10 +20,7 @@ def run_query(query):
 if __name__ == "__main__":
     if 2 <= len(sys.argv) <= 3:
         query_filename = sys.argv[1]
-        if len(sys.argv) == 3:
-            output_file = sys.argv[2]
-        else:
-            output_file = None
+        output_file = sys.argv[2] if len(sys.argv) == 3 else None
     else:
         exit(f"Usage: {sys.argv[0]} QUERY_FILE [OUTPUT_FILE]")
 

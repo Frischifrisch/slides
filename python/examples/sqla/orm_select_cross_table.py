@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from orm_create_db import Base, Genre, Movie, Person, Cast
 
 dbname = 'imdb.db'
-engine = create_engine('sqlite:///' + dbname)
+engine = create_engine(f'sqlite:///{dbname}')
 
 Base.metadata.bind = engine
 

@@ -139,7 +139,7 @@ def main():
         for line in book:
             fh.write(line + "\n")
     end = time.time()
-    logging.info("Done. Elapsed time: {}".format(end-start))
+    logging.info(f"Done. Elapsed time: {end - start}")
 
 
 main()

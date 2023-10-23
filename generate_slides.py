@@ -12,28 +12,23 @@ import datetime
 
 root   = os.path.dirname(os.path.abspath(__file__))
 parent = os.path.dirname(root)
-slider = "{}/slider-py/slider.py".format(parent)
+slider = f"{parent}/slider-py/slider.py"
 #print("root={}".format(root))
 #print("parent={}".format(parent))
 if not os.path.exists(slider):
-    exit("{} does not exist".format(slider))
+    exit(f"{slider} does not exist")
 
 def main():
     args = get_arguments()
 
     html_root = os.path.join(root, 'html')
-    #print("html_root={}".format(html_root))
-    if not args.keep:
-        if os.path.exists(html_root):
+    if os.path.exists(html_root):
+        if not args.keep:
             shutil.rmtree(html_root)
     if not os.path.exists(html_root):
         os.mkdir(html_root)
 
-    if args.ext:
-        ext = "--ext " + args.ext
-    else:
-        ext = ''
-
+    ext = f"--ext {args.ext}" if args.ext else ''
     names, books = select_books(args)
     if args.chapter:
         original_json_file = os.path.join(root, books[0]['dir'], books[0]['filename'])
@@ -62,9 +57,7 @@ def get_arguments():
     parser.add_argument('--chapter', nargs='+')
     parser.add_argument('--hostname', default='https://code-maven.com')
     parser.add_argument('names', nargs='*')
-    args = parser.parse_args()
-
-    return args
+    return parser.parse_args()
 
 
 def select_books(args):
@@ -79,9 +72,11 @@ def select_books(args):
             if name in available_names:
                 names.append(name)
                 continue
-            for book in available_books:
-                if name == book['dir'] or name == book['outdir']:
-                    books.append(book)
+            books.extend(
+                book
+                for book in available_books
+                if name in [book['dir'], book['outdir']]
+            )
         if not names and not books:
             exit("Could not find any valid names or books")
     else:
@@ -132,7 +127,9 @@ def generate_singles(names, ext):
 
 def generate_multis(books, ext, hostname):
     for book in books:
-        print("{} - {} - {} - {}".format(book['dir'], book['filename'], book['outdir'], book['canonical']))
+        print(
+            f"{book['dir']} - {book['filename']} - {book['outdir']} - {book['canonical']}"
+        )
         cmd = '''{executable} "{slider}" --yaml "{root}/{bdir}/{bfilename}" --html --dir "{root}/html/{boutdir}/" --templates "{root}/templates/" --static "{root}/static/" --url "{hostname}/slides/{canonical}" {ext}'''.format(
             executable = sys.executable,
             hostname = hostname,
@@ -152,9 +149,10 @@ def generate_multis(books, ext, hostname):
 def generate_sitemap_xml(hostname):
     html_dir = os.path.join(root, 'html')
     ts = datetime.datetime.now().strftime("%Y-%m-%d")
-    #print(ts)
-    xml  = '''<?xml version="1.0" encoding="UTF-8"?>\n'''
-    xml += '''<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'''
+    xml = (
+        '''<?xml version="1.0" encoding="UTF-8"?>\n'''
+        + '''<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'''
+    )
     xml += '''   <url>\n'''
     xml += f'''      <loc>{hostname}/slides/</loc>\n'''
     xml += '''      <lastmod>{ts}</lastmod>\n'''.format(ts=ts)
@@ -190,7 +188,7 @@ def generate_index(ext):
     templates_dir = os.path.join(root, 'templates')
     html_filename = os.path.join(html_dir, 'index')
     if ext:
-        html_filename += '.' + ext
+        html_filename += f'.{ext}'
 
     courses = []
     for subject in os.listdir(html_dir):

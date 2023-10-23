@@ -7,7 +7,7 @@ def test_main_page():
     rv = aut.get('/')
     assert rv.status == '200 OK'
     assert '<form' in str(rv.data)
-    assert not 'Welcome back!' in str(rv.data)
+    assert 'Welcome back!' not in str(rv.data)
 
 
 def test_verification(monkeypatch):
@@ -30,9 +30,7 @@ def test_verification(monkeypatch):
     # Check that the rest of the email is correct
     assert messages == [{'to': 'foo@example.com', 'subject': 'Registration'}]
 
-    # This is the code that we would have received in the email:
-    match = re.search(r'/(\d\.\d+)"', html)
-    if match:
+    if match := re.search(r'/(\d\.\d+)"', html):
         code = match.group(1)
     print(code)
 
@@ -63,4 +61,4 @@ def test_invalid_verification(monkeypatch):
     assert 'FAILED' in str(rv.data)
 
     # No email was sent
-    assert messages == []
+    assert not messages

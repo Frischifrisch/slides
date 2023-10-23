@@ -40,7 +40,7 @@ def merge(chars1, counter1, chars2, counter2):
 def print_results(chars, counter):
     print("Results")
     for ix in range(len(chars)):
-        print("{}  {}".format(chars[ix], counter[ix]))
+        print(f"{chars[ix]}  {counter[ix]}")
 
 def count_in(filenames):
     total_chars = []

@@ -9,7 +9,7 @@ filename = sys.argv[1]
 
 
 def calculate_averages(row):
-    v1 = row.iloc[0:3].mean()
+    v1 = row.iloc[:3].mean()
     v2 = row.iloc[3:6].mean()
     return np.log2(v1/v2)
 

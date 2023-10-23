@@ -1,6 +1,5 @@
-stack = []
+stack = ["Joe"]
 
-stack.append("Joe")
 print(stack)
 stack.append("Jane")
 print(stack)

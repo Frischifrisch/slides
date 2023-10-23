@@ -13,7 +13,7 @@ label.pack()
 
 def backspace():
     if len(label['text']) > 0:
-        label['text'] = label['text'][0:-1]
+        label['text'] = label['text'][:-1]
 
 def clear():
     label['text'] = ''
@@ -38,8 +38,7 @@ def add_button(num, frame):
 
 numbers_frame = tk.Frame(app)
 numbers_frame.pack()
-numbers_row = {}
-numbers_row[1] = tk.Frame(numbers_frame)
+numbers_row = {1: tk.Frame(numbers_frame)}
 numbers_row[1].pack(side="top")
 numbers_row[2] = tk.Frame(numbers_frame)
 numbers_row[2].pack(side="top")

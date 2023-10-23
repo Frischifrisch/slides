@@ -4,7 +4,7 @@ class Point:
         self.y = y
 
     def __repr__(self):
-        return "Point({}, {})".format(self.x, self.y)
+        return f"Point({self.x}, {self.y})"
 
     def move(self, dx, dy):
         self.x += dx

@@ -6,7 +6,7 @@ class Rect:
         self.height = h
 
     def __str__(self):
-        return 'Rect[{}, {}]'.format(self.width, self.height)
+        return f'Rect[{self.width}, {self.height}]'
 
     def __mul__(self, other):
         o = int(other)

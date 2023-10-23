@@ -1,10 +1,7 @@
 from contextlib import contextmanager
 import sys
 
-param = ''
-if len(sys.argv) == 2:
-    #exit(f"Usage: {sys.argv[0]} []")
-    param = sys.argv[1]
+param = sys.argv[1] if len(sys.argv) == 2 else ''
 
 def code_with_context_manager():
     with my_plain_context():

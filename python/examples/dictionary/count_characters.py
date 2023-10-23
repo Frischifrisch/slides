@@ -15,4 +15,4 @@ for char in text:
         count[char] += 1
 
 for key in sorted( count.keys() ):
-    print("'{}' {}".format(key, count[key]))
+    print(f"'{key}' {count[key]}")

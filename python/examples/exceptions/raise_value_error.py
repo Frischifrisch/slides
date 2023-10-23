@@ -15,7 +15,7 @@ def main():
             add_material(name, amount)
         except Exception as err:
             print(f"Exception: {err}")
-            print("Type: " + type(err).__name__)
+            print(f"Type: {type(err).__name__}")
 
 main()
 

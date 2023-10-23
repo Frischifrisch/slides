@@ -2,9 +2,7 @@ import sys
 import string
 
 def count_digits(filename):
-    count = {}
-    for cr in string.digits:
-        count[cr] = 0
+    count = {cr: 0 for cr in string.digits}
     with open(filename) as fh:
         for row in fh:
             for cr in row:
@@ -34,9 +32,7 @@ def print_table(results):
             print(f"{res['count'][digit]:{dw}}", end="")
         print("")
 
-    total = {}
-    for digit in string.digits:
-        total[digit] = 0
+    total = {digit: 0 for digit in string.digits}
     for res in results:
         for digit in string.digits:
             total[digit] += res["count"][digit]

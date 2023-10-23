@@ -10,7 +10,7 @@ randomList2 = []
 randomList3 = []
 randomList4 = []
 
-for i in range(0,12):
+for _ in range(0,12):
     randomList1.append(random.randint(0,100))
     randomList2.append(random.randint(0, 100))
     randomList3.append(random.randint(0, 100))

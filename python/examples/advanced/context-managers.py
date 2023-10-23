@@ -14,12 +14,11 @@ class MyCM:
 def main():
     a = MyCM('a')
     b = MyCM('b')
-    with a, b:
+    with (a, b):
         a.partner = b
         b.partner = a
         a.something()
         raise Exception('nono')
-        b.something()
     print('in main - after')
 
 main()

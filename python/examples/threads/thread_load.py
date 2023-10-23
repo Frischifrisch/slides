@@ -30,12 +30,12 @@ def main():
         exit("Usage: {} POOL_SIZE")
     size = int(sys.argv[1])
     start = time.time()
-    threads = [ ThreadedCount(n=size) for i in range(size) ]
+    threads = [ThreadedCount(n=size) for _ in range(size)]
     [ t.start() for t in threads ]
     [ t.join() for t in threads ]
-    print("Results: {}".format(results))
+    print(f"Results: {results}")
     totals = map(lambda r: r['total'], results)
-    print("Total: {}".format(sum(totals)))
+    print(f"Total: {sum(totals)}")
     end = time.time()
     print(end - start)
 

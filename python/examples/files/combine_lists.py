@@ -16,4 +16,4 @@ for filename in files:
 
 with open('out.txt', 'w') as fh:
     for ix in range(len(names)):
-        fh.write("{}={}\n".format(names[ix], values[ix]))
+        fh.write(f"{names[ix]}={values[ix]}\n")

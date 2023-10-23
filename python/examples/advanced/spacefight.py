@@ -18,7 +18,7 @@ class Game:
             return
 
         if self.is_debug:
-            print("Hidden number {}. Your guess is {}".format(self.number, num))
+            print(f"Hidden number {self.number}. Your guess is {num}")
 
         if num < self.number:
             print("Too small")

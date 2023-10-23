@@ -33,7 +33,7 @@ def get():
     msg = consumer.receive()
     app.logger.info("received")
     try:
-        value = "{}: {}".format(msg.data(), msg.message_id())
+        value = f"{msg.data()}: {msg.message_id()}"
         consumer.acknowledge(msg)
     except Exception as err:
         value = f"Exception {err}"

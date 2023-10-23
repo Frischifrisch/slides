@@ -9,7 +9,7 @@ import shutil
 @contextmanager
 def my_tempdir():
     print("start return")
-    tmpdir = '/tmp/' + str(time.time()) + str(random.random())
+    tmpdir = f'/tmp/{str(time.time())}{random.random()}'
     os.mkdir(tmpdir)
     try:
         yield tmpdir

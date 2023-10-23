@@ -4,8 +4,7 @@ def add(a):
     return a
 
 def add(x, y):
-   z = 42
-   sum = x+y
-   return sum
+    z = 42
+    return x+y
 
 print = 42

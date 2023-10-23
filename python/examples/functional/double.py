@@ -3,7 +3,5 @@ def double(n):
 
 numbers = [1, 2, 3, 4]
 
-double_numbers = []
-for num in numbers:
-    double_numbers.append( double(num) )
+double_numbers = [double(num) for num in numbers]
 print(double_numbers)

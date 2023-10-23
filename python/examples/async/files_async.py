@@ -7,11 +7,7 @@ import os
 async def save_file(filename, size):
     async with aiofiles.open(filename, 'w') as f:
         for _ in range(size):
-            #data = 'x' * 1000000
-            data = ''
-            for _ in range(1000):
-                data += 'xxxxxxxxxxx'
-
+            data = ''.join('xxxxxxxxxxx' for _ in range(1000))
             await f.write(data)
 
 async def main():

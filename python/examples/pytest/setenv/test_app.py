@@ -17,5 +17,5 @@ def test_other():
     print()
 
 def test_keep(monkeypatch):
-    monkeypatch.setenv('PATH', '/usr/bin' + os.pathsep + os.environ['PATH'])
+    monkeypatch.setenv('PATH', f'/usr/bin{os.pathsep}' + os.environ['PATH'])
     print(os.environ['PATH'])

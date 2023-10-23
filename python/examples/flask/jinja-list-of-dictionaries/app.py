@@ -15,6 +15,5 @@ def read_csv_file(filename):
     planets = []
     with open(filename) as fh:
         rd = csv.DictReader(fh, delimiter=',')
-        for row in rd:
-            planets.append(row)
+        planets.extend(iter(rd))
     return planets

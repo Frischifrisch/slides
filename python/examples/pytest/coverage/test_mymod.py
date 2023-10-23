@@ -5,7 +5,7 @@ def test_add():
 
 def test_area():
     assert mymod.area(2, 3) == 6
-    assert mymod.area(-2, 3) == None
+    assert mymod.area(-2, 3) is None
 
 def test_fib():
     assert mymod.fib(1) == 1

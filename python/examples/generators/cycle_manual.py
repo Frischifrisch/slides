@@ -4,8 +4,7 @@ def cycle(values=[]):
         my_values.append(v)
         yield v
     while True:
-        for v in my_values:
-            yield v
+        yield from my_values
 
 i = 0
 for c in cycle(['A', 'B', 'C']):

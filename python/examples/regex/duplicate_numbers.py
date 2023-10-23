@@ -15,8 +15,7 @@ def double(match):
     matched_number_as_str = match.group(0)
     number = int(matched_number_as_str)
     doubled_number = 2 * number
-    doubled_number_as_str = str(doubled_number)
-    return doubled_number_as_str
+    return str(doubled_number)
 
 double_numbers = re.sub(r'(\d+)', double, text)
 print(double_numbers)  # This is 2 string with 6 numbers: 68

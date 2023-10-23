@@ -9,7 +9,5 @@ people = []
 
 with open(filename) as fh:
     reader = csv.DictReader(fh)
-    for line in reader:
-        people.append(line)
-
+    people.extend(iter(reader))
 print(people[1]['fname'])

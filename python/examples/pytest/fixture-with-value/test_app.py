@@ -5,8 +5,7 @@ import application
 @pytest.fixture()
 def app():
     print('app starts')
-    myapp = application.App()
-    return myapp
+    return application.App()
 
 
 def test_add_user_foo(app):
